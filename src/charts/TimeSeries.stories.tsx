@@ -20,14 +20,6 @@ Base.decorators = [
   )
 ];
 
-const demoData = [
-  { clicks: 14, time: 1503617297689 },
-  { clicks: 11, time: 1503616962277 },
-  { clicks: 15, time: 1503616882654 },
-  { clicks: 20, time: 1503613184594 },
-  { clicks: 15, time: 1503611308914 }
-];
-
 const generateData = (from: Date, to: Date) => {
   let data = [];
   let temp = from;
