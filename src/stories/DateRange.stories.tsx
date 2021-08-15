@@ -1,0 +1,28 @@
+import React, { FC, useState } from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { addDays } from 'date-fns';
+import { DateButton } from 'components/date-range-picker/Button';
+import DateRangePicker from 'components/date-range-picker';
+import { Range } from 'react-date-range';
+
+export default {
+  title: 'Components/DateRangePicker',
+  component: DateRangePicker,
+  argTypes: {
+    direction: {
+      options: ['vertical', 'horizontal'],
+      control: 'radio'
+    }
+  }
+} as ComponentMeta<typeof DateRangePicker>;
+
+export const Picker: ComponentStory<typeof DateRangePicker> = args => {
+  const [range, setRange] = useState<Range>({
+    startDate: new Date(),
+    endDate: addDays(new Date(), 20)
+  });
+  return <DateRangePicker value={range} onChange={setRange} {...args} />;
+};
+Picker.args = {
+  direction: 'vertical'
+};
