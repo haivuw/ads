@@ -1,21 +1,33 @@
 import React from 'react'
 import PaginationComponent from './Pagination'
+import {ComponentMeta, ComponentStory} from "@storybook/react";
 
 export default {
-    title: 'Pagination',
+    title: 'Components/Pagination',
     component: PaginationComponent,
-}
-
-export const Pagination = () => {
-    const count = 1000;
-    const [pageSize, setPageSize] = React.useState(20)
-
-    const onChange = () => {
-
+    argTypes: {
+        count: {
+            control: 'number'
+        },
+        pageSize: {
+            options: [10, 20, 30, 50, 100],
+            control: 'radio'
         }
-    return <PaginationComponent
-        count={count}
-        onChange = {onChange}
-        pageSize={pageSize}
-        setPageSize={setPageSize}/>
+    }
+} as ComponentMeta<typeof PaginationComponent>;
+
+const Template: ComponentStory<typeof PaginationComponent> = args => <PaginationComponent {...args} />;
+
+export const Pagination = Template.bind({});
+const onChange = () => {
+
+    }
+const setPageSize = () => {
+
 }
+Pagination.args = {
+    count: 1000,
+    pageSize: 10,
+    onChange: onChange,
+    setPageSize: setPageSize,
+};

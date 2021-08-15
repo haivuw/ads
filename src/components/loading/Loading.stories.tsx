@@ -1,28 +1,19 @@
 import React, {useState, useEffect} from 'react'
 import LoadingComponent from './LoadingComponent'
-import {HEADER_TYPE} from "../../config/contanst";
-
+import {ComponentMeta, ComponentStory} from "@storybook/react";
 export default {
-    title: 'Loading',
+    title: 'Components/Loading',
     component: LoadingComponent,
-    // args: {
-    //     children: 'Button'
-    // }
-}
-
-export const Loading = () => {
-    const [loaded, setLoaded] = useState(true);
-    useEffect(() => {
-        // visible true -> false
-        if (!loaded) {
-            //setTimeout(() => setLoaded(true), 250); // 0.25초 뒤에 해제
-            //debugger;
-            setTimeout(() => setLoaded(true), 5000); // 10초 뒤에
+    argTypes: {
+        loading: {
+            control: 'boolean'
         }
+    }
+} as ComponentMeta<typeof LoadingComponent>;
 
-        //setLoaded(loaded);
-    }, [loaded]);
+const Template: ComponentStory<typeof LoadingComponent> = args => <LoadingComponent {...args} />;
 
-
-    return <LoadingComponent loading={loaded} children={loaded}/>
-}
+export const Loading = Template.bind({});
+Loading.args = {
+    loading: true,
+};
