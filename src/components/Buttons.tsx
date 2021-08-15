@@ -27,7 +27,7 @@ const withLoadingProp =
     const { loading, ...rest } = props;
 
     const loadingProps = {
-      children: <CircularProgress size="1.8em" />,
+      children: [props.children, <CircularProgress size="1em" style={{ position: 'absolute' }} />],
       disabled: true
     };
 
