@@ -93,7 +93,7 @@ const ProfileButton = withStyles({
 })(Button);
 
 
-export default function HeaderComponent({type, setOpen, open}) {
+export default function HeaderComponent({type, setOpen = null, open = null}) {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [anchorAllCampaigns, setAnchorAllCampaigns] = React.useState(null);
@@ -107,7 +107,9 @@ export default function HeaderComponent({type, setOpen, open}) {
     // const [open, setOpen] = React.useState(false);
 
     const handleDrawerOpen = () => {
-        setOpen(true);
+        if(setOpen){
+            setOpen(true);
+        }
     };
 
     const handleProfileMenuOpen = (event: any) => {

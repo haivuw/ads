@@ -10,9 +10,9 @@ export default {
     // }
 }
 
-export const HeaderOfAllCampaigns = () => <HeaderComponent type={HEADER_TYPE.ALL_CAMPAIGNS}/>
-export const HeaderOfACampaign = () => <HeaderComponent type={HEADER_TYPE.ONE_CAMPAIGN}/>
-export const HeaderOfCreateCampaign = () => <HeaderComponent type={HEADER_TYPE.CREATE_CAMPAIGN}/>
+export const HeaderOfAllCampaigns = () => <HeaderComponent type={HEADER_TYPE.ALL_CAMPAIGNS} />
+export const HeaderOfACampaign = () => <HeaderComponent type={HEADER_TYPE.ONE_CAMPAIGN} />
+export const HeaderOfCreateCampaign = () => <HeaderComponent type={HEADER_TYPE.CREATE_CAMPAIGN} />
 
 // const Template = args => <HeaderComponent {...args} />
 
