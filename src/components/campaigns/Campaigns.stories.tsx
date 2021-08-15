@@ -4,8 +4,7 @@ import { ToolbarWithChildren } from 'components/table/Toolbar.stories';
 import React, { useState, useEffect } from 'react';
 import LayoutComponent from '../Layout/Layout';
 import { Table } from '../tables/TableData.stories';
-import { generateData as generateLineData } from 'charts/TimeSeries.stories';
-import TimeSeriesChart from 'charts/TimeSeries';
+import TimeSeriesChart, { generateData } from 'charts/TimeSeries';
 import { Picker } from 'stories/DateRange.stories';
 
 export default {
@@ -22,7 +21,7 @@ export const Campaigns = () => {
       <Picker />
       <Box m={1} />
       <div style={{ height: 300, position: 'relative', left: -30 }}>
-        <TimeSeriesChart data={generateLineData()} />
+        <TimeSeriesChart data={generateData()} />
       </div>
       <Box m={1} />
       <ToolbarWithChildren />

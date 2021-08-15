@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import TimeSeriesChart from './TimeSeries';
-import addDays from 'date-fns/addDays';
+import TimeSeriesChart, { generateData } from './TimeSeries';
 
 export default {
   title: 'Charts/TimeSeries',
@@ -19,19 +18,6 @@ Base.decorators = [
     </div>
   )
 ];
-
-export const generateData = () => {
-  const from = new Date();
-  const to = addDays(new Date(), Math.floor(Math.random() * (30 - 7 + 1)) + 7);
-  let data = [];
-  let temp = from;
-  while (temp < to) {
-    data.push({ time: temp.getTime(), clicks: Math.floor(Math.random() * 100) });
-    temp = addDays(temp, 1);
-  }
-  console.log(data);
-  return data;
-};
 
 Base.args = {
   data: generateData()
