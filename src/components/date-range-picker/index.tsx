@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 import { DateRangePicker, DateRangePickerProps, Range } from 'react-date-range';
 import { addDays } from 'date-fns';
 import { Button, Popover } from '@material-ui/core';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const Picker: FC<
   Omit<DateRangePickerProps, 'onChange'> & { value: Range; onChange: (range: Range) => void }
@@ -11,7 +12,7 @@ const Picker: FC<
 
   return (
     <>
-      <Button onClick={() => setOpen(!open)}>
+      <Button onClick={() => setOpen(!open)} variant="text" endIcon={<ArrowDropDownIcon />}>
         {value
           ? `${value.startDate.toDateString()} ~ ${value.endDate.toDateString()}`
           : 'Select range'}
