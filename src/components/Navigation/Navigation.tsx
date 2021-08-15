@@ -16,9 +16,9 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 import AdbIcon from '@material-ui/icons/Adb';
 import BusinessIcon from '@material-ui/icons/Business';
-import HeaderComponent from "../header-demo/HeaderComponent";
-import {HEADER_TYPE} from "../../config/contanst";
-import {Table} from "../tables/TableData.stories";
+import HeaderComponent from '../header-demo/HeaderComponent';
+import { HEADER_TYPE } from '../../config/contanst';
+import { Table } from '../tables/TableData.stories';
 import Toolbar from '@material-ui/core/Toolbar';
 import AppBar from '@material-ui/core/AppBar';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -26,119 +26,127 @@ import MenuIcon from '@material-ui/icons/Menu';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            display: 'flex',
-        },
-        appBar: {
-            zIndex: theme.zIndex.drawer + 1,
-            transition: theme.transitions.create(['width', 'margin'], {
-                easing: theme.transitions.easing.sharp,
-                duration: theme.transitions.duration.leavingScreen,
-            }),
-        },
-        appBarShift: {
-            marginLeft: drawerWidth,
-            width: `calc(100% - ${drawerWidth}px)`,
-            transition: theme.transitions.create(['width', 'margin'], {
-                easing: theme.transitions.easing.sharp,
-                duration: theme.transitions.duration.enteringScreen,
-            }),
-        },
-        menuButton: {
-            marginRight: 36,
-        },
-        hide: {
-            display: 'none',
-        },
-        drawer: {
-            width: drawerWidth,
-            flexShrink: 0,
-            whiteSpace: 'nowrap',
-        },
-        drawerOpen: {
-            width: drawerWidth,
-            transition: theme.transitions.create('width', {
-                easing: theme.transitions.easing.sharp,
-                duration: theme.transitions.duration.enteringScreen,
-            }),
-        },
-        drawerClose: {
-            transition: theme.transitions.create('width', {
-                easing: theme.transitions.easing.sharp,
-                duration: theme.transitions.duration.leavingScreen,
-            }),
-            overflowX: 'hidden',
-            width: theme.spacing(7) + 1,
-            [theme.breakpoints.up('sm')]: {
-                width: theme.spacing(9) + 1,
-            },
-        },
-        toolbar: {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'flex-end',
-            padding: theme.spacing(0, 1),
-            // necessary for content to be below app bar
-            ...theme.mixins.toolbar,
-        },
-        content: {
-            flexGrow: 1,
-            padding: theme.spacing(3),
-        },
-    }),
+  createStyles({
+    root: {
+      display: 'flex'
+    },
+    appBar: {
+      zIndex: theme.zIndex.drawer + 1,
+      transition: theme.transitions.create(['width', 'margin'], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen
+      })
+    },
+    appBarShift: {
+      marginLeft: drawerWidth,
+      width: `calc(100% - ${drawerWidth}px)`,
+      transition: theme.transitions.create(['width', 'margin'], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.enteringScreen
+      })
+    },
+    menuButton: {
+      marginRight: 36
+    },
+    hide: {
+      display: 'none'
+    },
+    drawer: {
+      width: drawerWidth,
+      flexShrink: 0,
+      whiteSpace: 'nowrap'
+    },
+    drawerOpen: {
+      width: drawerWidth,
+      transition: theme.transitions.create('width', {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.enteringScreen
+      })
+    },
+    drawerClose: {
+      transition: theme.transitions.create('width', {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen
+      }),
+      overflowX: 'hidden',
+      width: theme.spacing(7) + 1,
+      [theme.breakpoints.up('sm')]: {
+        width: theme.spacing(9) + 1
+      }
+    },
+    toolbar: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      padding: theme.spacing(0, 1),
+      // necessary for content to be below app bar
+      ...theme.mixins.toolbar
+    },
+    content: {
+      flexGrow: 1,
+      padding: theme.spacing(3)
+    }
+  })
 );
 
-export default function Navigation({open, setOpen}) {
-    const classes = useStyles();
-    const theme = useTheme();
-    const handleDrawerClose = () => {
-        setOpen(prevState => !prevState);
-    };
+export default function Navigation({ open, setOpen }) {
+  const classes = useStyles();
+  const theme = useTheme();
+  const handleDrawerClose = () => {
+    setOpen(prevState => !prevState);
+  };
 
-    return (
-        <>
-            <Drawer
-                variant="permanent"
-                className={clsx(classes.drawer, {
-                    [classes.drawerOpen]: open,
-                    [classes.drawerClose]: !open,
-                })}
-                classes={{
-                    paper: clsx({
-                        [classes.drawerOpen]: open,
-                        [classes.drawerClose]: !open,
-                    }),
-                }}
-            >
-                <div className={classes.toolbar}>
-                    <Typography variant="h3" noWrap>
-                        LOGO
-                    </Typography>
-                    <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-                    </IconButton>
-                </div>
-                <Divider />
-                <List>
-                    <ListItem button>
-                        <ListItemIcon><DashboardIcon /></ListItemIcon>
-                        <ListItemText primary={'概要'} />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon><PeopleOutlineIcon /></ListItemIcon>
-                        <ListItemText primary={'アカウント'} />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon><AdbIcon /></ListItemIcon>
-                        <ListItemText primary={'キャンペーン'} />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon><BusinessIcon /></ListItemIcon>
-                        <ListItemText primary={'商品'} />
-                    </ListItem>
-                </List>
-            </Drawer>
-            </>
-    );
+  return (
+    <>
+      <Drawer
+        variant="permanent"
+        className={clsx(classes.drawer, {
+          [classes.drawerOpen]: open,
+          [classes.drawerClose]: !open
+        })}
+        classes={{
+          paper: clsx({
+            [classes.drawerOpen]: open,
+            [classes.drawerClose]: !open
+          })
+        }}
+      >
+        <div className={classes.toolbar}>
+          <Typography variant="h3" noWrap>
+            LOGO
+          </Typography>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+          </IconButton>
+        </div>
+        <Divider />
+        <List>
+          <ListItem button>
+            <ListItemIcon>
+              <DashboardIcon />
+            </ListItemIcon>
+            <ListItemText primary={'概要'} />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <PeopleOutlineIcon />
+            </ListItemIcon>
+            <ListItemText primary={'アカウント'} />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <AdbIcon />
+            </ListItemIcon>
+            <ListItemText primary={'キャンペーン'} />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <BusinessIcon />
+            </ListItemIcon>
+            <ListItemText primary={'商品'} />
+          </ListItem>
+        </List>
+      </Drawer>
+    </>
+  );
 }

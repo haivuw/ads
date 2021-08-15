@@ -1,7 +1,7 @@
 import React from 'react';
 import LoadingOverlay from 'react-loading-overlay';
-import BounceLoader from 'react-spinners/BounceLoader'
-import styled, { css } from "styled-components";
+import BounceLoader from 'react-spinners/BounceLoader';
+import styled, { css } from 'styled-components';
 
 const DarkBackground = styled.div`
   display: none; /* Hidden by default */
@@ -23,16 +23,12 @@ const DarkBackground = styled.div`
     `}
 `;
 
-export default function LoadingComponent({loading, children}) {
-    return (
-        <DarkBackground disappear={loading}>
-        <LoadingOverlay
-            spinner={<BounceLoader />}
-            active={loading}
-        >
-            {children}
-        </LoadingOverlay>
-
-        </DarkBackground>
-    );
+export default function LoadingComponent({ loading, children }) {
+  return (
+    <DarkBackground disappear={loading}>
+      <LoadingOverlay spinner={<BounceLoader />} active={loading}>
+        {children}
+      </LoadingOverlay>
+    </DarkBackground>
+  );
 }
