@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Box } from '@material-ui/core';
 import { ToolbarWithChildren } from 'components/table/Toolbar.stories';
 import React, { useState, useEffect } from 'react';
