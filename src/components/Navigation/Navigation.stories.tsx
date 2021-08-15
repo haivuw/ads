@@ -1,18 +1,16 @@
 import React from 'react'
-import HeaderComponent from './HeaderComponent'
+import Navigation from './Navigation'
 import {HEADER_TYPE} from "../../config/contanst";
 
 export default {
-    title: 'Header',
-    component: HeaderComponent,
+    title: 'Navigation',
+    component: Navigation,
     // args: {
     //     children: 'Button'
     // }
 }
 
-export const HeaderOfAllCampaigns = () => <HeaderComponent type={HEADER_TYPE.ALL_CAMPAIGNS}/>
-export const HeaderOfACampaign = () => <HeaderComponent type={HEADER_TYPE.ONE_CAMPAIGN}/>
-export const HeaderOfCreateCampaign = () => <HeaderComponent type={HEADER_TYPE.CREATE_CAMPAIGN}/>
+export const NavigationOfAllCampaigns = () => <Navigation />
 
 // const Template = args => <HeaderComponent {...args} />
 
