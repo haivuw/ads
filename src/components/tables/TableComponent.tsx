@@ -13,7 +13,6 @@ import PaginationComponent from '../pagination/Pagination';
 import LoadingComponent from '../loading/LoadingComponent';
 
 const Styles = styled.div`
-  padding: 1rem;
   .pagination {
     padding: 0.5rem;
   }

@@ -16,7 +16,7 @@ const TimeSeriesChart = ({ data }) => (
     <LineChart data={data}>
       <Line dataKey="clicks" stroke="#8884d8" />
       <XAxis dataKey="time" tickFormatter={time => (time ? new Date(time).toDateString() : '')} />
-      <YAxis dataKey="clicks" />
+      <YAxis dataKey="clicks" tickLine={false} />
       <Tooltip labelFormatter={time => new Date(time).toDateString()} />
     </LineChart>
   </ResponsiveContainer>

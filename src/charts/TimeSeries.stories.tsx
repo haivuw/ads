@@ -14,13 +14,15 @@ const Template: ComponentStory<typeof TimeSeriesChart> = args => <TimeSeriesChar
 export const Base = Template.bind({});
 Base.decorators = [
   Story => (
-    <div style={{ height: 500, width: '100%' }}>
+    <div style={{ height: 200, width: '100%' }}>
       <Story />
     </div>
   )
 ];
 
-const generateData = (from: Date, to: Date) => {
+export const generateData = () => {
+  const from = new Date();
+  const to = addDays(new Date(), Math.floor(Math.random() * (30 - 7 + 1)) + 7);
   let data = [];
   let temp = from;
   while (temp < to) {
@@ -32,5 +34,5 @@ const generateData = (from: Date, to: Date) => {
 };
 
 Base.args = {
-  data: generateData(new Date(), addDays(new Date(), Math.floor(Math.random() * (30 - 7 + 1)) + 7))
+  data: generateData()
 };

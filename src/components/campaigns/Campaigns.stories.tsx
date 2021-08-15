@@ -1,6 +1,11 @@
+import { Box } from '@material-ui/core';
+import { ToolbarWithChildren } from 'components/table/Toolbar.stories';
 import React, { useState, useEffect } from 'react';
 import LayoutComponent from '../Layout/Layout';
 import { Table } from '../tables/TableData.stories';
+import { generateData as generateLineData } from 'charts/TimeSeries.stories';
+import TimeSeriesChart from 'charts/TimeSeries';
+import { Picker } from 'stories/DateRange.stories';
 
 export default {
   title: 'Screens/Campaigns',
@@ -11,6 +16,17 @@ export default {
 };
 
 export const Campaigns = () => {
-  const children = <Table />;
-  return <LayoutComponent children={children} />;
+  return (
+    <LayoutComponent>
+      <Picker />
+      <Box m={1} />
+      <div style={{ height: 300, position: 'relative', left: -30 }}>
+        <TimeSeriesChart data={generateLineData()} />
+      </div>
+      <Box m={1} />
+      <ToolbarWithChildren />
+      <Box m={1} />
+      <Table />
+    </LayoutComponent>
+  );
 };
