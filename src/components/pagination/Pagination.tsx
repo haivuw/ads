@@ -33,7 +33,6 @@ export default function PaginationComponent({count, onChange, pageSize, setPageS
                 border: '1px solid #ced4da',
                 fontSize: 16,
                 padding: '5px 26px 5px 12px',
-                marginTop: -10,
                 marginLeft: 20,
                 transition: theme.transitions.create(['border-color', 'box-shadow']),
                 '&:focus': {

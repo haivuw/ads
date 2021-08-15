@@ -5,6 +5,17 @@ import {HEADER_TYPE} from "../../config/contanst";
 export default {
     title: 'Components/Header',
     component: HeaderComponent,
+    argTypes: {
+        open: {
+            control: 'boolean'
+        },
+        setOpen: {
+
+        },
+        type: {
+
+        }
+    }
 }
 
 export const HeaderOfAllCampaigns = () => <HeaderComponent type={HEADER_TYPE.ALL_CAMPAIGNS} />
