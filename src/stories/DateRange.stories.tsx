@@ -1,7 +1,6 @@
 import React, { FC, useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { addDays } from 'date-fns';
-import { DateButton } from 'components/date-range-picker/Button';
 import DateRangePicker from 'components/date-range-picker';
 import { Range } from 'react-date-range';
 
