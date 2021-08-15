@@ -1,19 +1,30 @@
 import React from 'react';
 import HeaderComponent from './HeaderComponent';
 import { HEADER_TYPE } from '../../config/contanst';
+import {ComponentMeta, ComponentStory} from "@storybook/react";
+import Button from "../Buttons";
 
 export default {
-  title: 'Components/Header',
+  title: 'Layouts/Header',
   component: HeaderComponent,
   argTypes: {
+    type: {
+      options: [HEADER_TYPE.ALL_CAMPAIGNS, HEADER_TYPE.ONE_CAMPAIGN, HEADER_TYPE.CREATE_CAMPAIGN],
+      control: 'radio'
+    },
     open: {
       control: 'boolean'
     },
-    setOpen: {},
-    type: {}
-  }
-};
+    setOpen: {
 
-export const HeaderOfAllCampaigns = () => <HeaderComponent type={HEADER_TYPE.ALL_CAMPAIGNS} />;
-export const HeaderOfACampaign = () => <HeaderComponent type={HEADER_TYPE.ONE_CAMPAIGN} />;
-export const HeaderOfCreateCampaign = () => <HeaderComponent type={HEADER_TYPE.CREATE_CAMPAIGN} />;
+    }
+  }
+}as ComponentMeta<typeof HeaderComponent>;
+
+const Template: ComponentStory<typeof HeaderComponent> = args => <HeaderComponent {...args} />;
+export const Header = Template.bind({});
+
+Header.args = {
+  type: HEADER_TYPE.ALL_CAMPAIGNS,
+  open: false,
+};

@@ -3,7 +3,7 @@ import LayoutComponent from '../Layout/Layout';
 import { Table } from '../tables/TableData.stories';
 
 export default {
-  title: 'Campaigns list',
+  title: 'Screens/Campaigns',
   component: LayoutComponent
   // args: {
   //     children: 'Button'

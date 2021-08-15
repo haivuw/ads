@@ -3,7 +3,7 @@ import NavigationComponent from './Navigation';
 import { HEADER_TYPE } from '../../config/contanst';
 
 export default {
-  title: 'Components/Navigation',
+  title: 'Layouts/Navigation',
   component: NavigationComponent,
   argTypes: {
     open: {
