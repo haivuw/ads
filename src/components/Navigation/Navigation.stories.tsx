@@ -10,7 +10,11 @@ export default {
     // }
 }
 
-export const NavigationOfAllCampaigns = () => <Navigation />
+export const NavigationOfAllCampaigns = () =>{
+    const [open, setOpen] = React.useState(false);
+
+    return  <Navigation setOpen={setOpen} open={open}/>
+}
 
 // const Template = args => <HeaderComponent {...args} />
 

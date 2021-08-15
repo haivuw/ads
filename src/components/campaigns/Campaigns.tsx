@@ -18,10 +18,6 @@ import AdbIcon from '@material-ui/icons/Adb';
 import BusinessIcon from '@material-ui/icons/Business';
 import HeaderComponent from "../header-demo/HeaderComponent";
 import {HEADER_TYPE} from "../../config/contanst";
-import {Table} from "../tables/TableData.stories";
-import Toolbar from '@material-ui/core/Toolbar';
-import AppBar from '@material-ui/core/AppBar';
-import MenuIcon from '@material-ui/icons/Menu';
 
 const drawerWidth = 240;
 
@@ -89,15 +85,42 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export default function Navigation({open, setOpen}) {
+export default function Campaigns() {
     const classes = useStyles();
     const theme = useTheme();
+    const [open, setOpen] = React.useState(false);
     const handleDrawerClose = () => {
-        setOpen(prevState => !prevState);
+        setOpen(false);
     };
 
     return (
-        <>
+        <div className={classes.root}>
+            <CssBaseline />
+            {/*<AppBar*/}
+            {/*    position="fixed"*/}
+            {/*    className={clsx(classes.appBar, {*/}
+            {/*        [classes.appBarShift]: open,*/}
+            {/*    })}*/}
+            {/*>*/}
+            {/*    <HeaderComponent type={HEADER_TYPE.ALL_CAMPAIGNS}/>*/}
+            {/*    <Toolbar>*/}
+            {/*        <IconButton*/}
+            {/*            color="inherit"*/}
+            {/*            aria-label="open drawer"*/}
+            {/*            onClick={handleDrawerOpen}*/}
+            {/*            edge="start"*/}
+            {/*            className={clsx(classes.menuButton, {*/}
+            {/*                [classes.hide]: open,*/}
+            {/*            })}*/}
+            {/*        >*/}
+            {/*            <MenuIcon />*/}
+            {/*        </IconButton>*/}
+            {/*        <Typography variant="h6" noWrap>*/}
+            {/*           LOGO*/}
+            {/*        </Typography>*/}
+            {/*    </Toolbar>*/}
+            {/*</AppBar>*/}
+            <HeaderComponent type={HEADER_TYPE.ALL_CAMPAIGNS} open={open} setOpen={setOpen}/>
             <Drawer
                 variant="permanent"
                 className={clsx(classes.drawer, {
@@ -139,6 +162,9 @@ export default function Navigation({open, setOpen}) {
                     </ListItem>
                 </List>
             </Drawer>
-            </>
+            <main className={classes.content}>
+                <div className={classes.toolbar} />
+            </main>
+        </div>
     );
 }
