@@ -5,12 +5,9 @@ import {
   Line,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer
 } from 'recharts';
-import format from 'date-fns/format';
 
 const TimeSeriesChart = ({ data }) => (
   <ResponsiveContainer width="100%" height="100%">

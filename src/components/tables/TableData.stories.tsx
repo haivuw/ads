@@ -1,6 +1,6 @@
 import React from 'react';
 import TableComponent from './TableComponent';
-import { HEADER_TYPE } from '../../config/contanst';
+import {COLUMNS_CAMPAIGNS, HEADER_TYPE} from '../../config/contanst';
 import makeData from './MakeData';
 
 export default {
@@ -10,93 +10,6 @@ export default {
   //     children: 'Button'
   // }
 };
-const WIDTH_CELL = 120;
-const WIDTH_CELL_SMALL = 90;
-const columns = [
-  {
-    Header: 'キャンペーン',
-    accessor: 'campaignName',
-    width: 200
-  },
-  {
-    Header: '予算',
-    accessor: 'budget',
-    width: WIDTH_CELL
-  },
-  {
-    Header: 'ステータス',
-    accessor: 'status',
-    width: WIDTH_CELL
-  },
-  {
-    Header: '最適化スコア',
-    accessor: 'optimisationScore',
-    width: WIDTH_CELL
-  },
-  {
-    Header: '最適化スコア',
-    accessor: 'account',
-    width: WIDTH_CELL
-  },
-  {
-    Header: 'キャンペーンタイプ',
-    accessor: 'campaignType',
-    width: WIDTH_CELL
-  },
-
-  {
-    Header: 'コンバージョン',
-    accessor: 'conversions',
-    width: WIDTH_CELL_SMALL
-  },
-  {
-    Header: 'コンバージョン',
-    accessor: 'costConv',
-    width: WIDTH_CELL_SMALL
-  },
-  {
-    Header: '表示回数',
-    accessor: 'impr',
-    width: WIDTH_CELL_SMALL
-  },
-  {
-    Header: 'インタラクション',
-    accessor: 'interactions',
-    width: WIDTH_CELL_SMALL
-  },
-  {
-    Header: 'インタラクション率',
-    accessor: 'interactionRate',
-    width: WIDTH_CELL_SMALL
-  },
-  {
-    Header: '平均費用',
-    accessor: 'AvgCost',
-    width: WIDTH_CELL_SMALL
-  },
-  {
-    Header: '費用',
-    accessor: 'cost',
-    width: WIDTH_CELL_SMALL
-  },
-  {
-    Header: 'クリック数',
-    accessor: 'click',
-    width: WIDTH_CELL_SMALL
-  },
-  {
-    Header: '無効なクリック',
-    accessor: 'invalidClick',
-    width: WIDTH_CELL_SMALL
-  },
-  {
-    Header: '平均クリック単価',
-    accessor: 'avgCPC',
-    width: WIDTH_CELL_SMALL
-  }
-  // ],
-  // },
-];
 export const Table = () => {
   const serverData = makeData(1000);
   const [loading, setLoading] = React.useState(false);
@@ -134,7 +47,7 @@ export const Table = () => {
 
   return (
     <TableComponent
-      columns={columns}
+      columns={COLUMNS_CAMPAIGNS}
       loading={loading}
       pageCount={pageCount}
       fetchData={fetchData}
@@ -147,7 +60,7 @@ export const Table = () => {
 
 // export const PrimaryA = Template.bind({})
 Table.args = {
-  columns: columns
+  columns: COLUMNS_CAMPAIGNS
   // children: 'Primary Args',
 };
 

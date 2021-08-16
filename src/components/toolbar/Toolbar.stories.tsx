@@ -26,16 +26,30 @@ const Template: ComponentStory<typeof Toolbar> = args => (
     <Filter />
     <Box ml="auto" display="flex" alignItems="center">
       <TextInput
-        style={{ height: 36 }}
+        style={{ height: 28 }}
         placeholder="Search campaigns"
         startAdornment={<SearchIcon />}
       />
       <Box m={1} />
-      <Button endIcon={<ViewColumnIcon />}>Columns</Button>
+      <Button
+          endIcon={<ViewColumnIcon />}
+          size={'small'}
+          variant={'text'}
+      >
+          Columns
+      </Button>
       <Box m={1} />
-      <Button endIcon={<GetAppIcon />}>Download</Button>
+      <Button
+          endIcon={<GetAppIcon />}
+          size={'small'}
+          variant={'text'}
+      >Download</Button>
       <Box m={1} />
-      <Button endIcon={<AspectRatioIcon />}>Expand</Button>
+      <Button
+          endIcon={<AspectRatioIcon />}
+          size={'small'}
+          variant={'text'}
+      >Expand</Button>
     </Box>
   </Toolbar>
 );

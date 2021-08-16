@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import { createStyles, makeStyles, useTheme, Theme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
@@ -16,12 +15,6 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 import AdbIcon from '@material-ui/icons/Adb';
 import BusinessIcon from '@material-ui/icons/Business';
-import HeaderComponent from '../header-demo/HeaderComponent';
-import { HEADER_TYPE } from '../../config/contanst';
-import { Table } from '../tables/TableData.stories';
-import Toolbar from '@material-ui/core/Toolbar';
-import AppBar from '@material-ui/core/AppBar';
-import MenuIcon from '@material-ui/icons/Menu';
 
 const drawerWidth = 240;
 

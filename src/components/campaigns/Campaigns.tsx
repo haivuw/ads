@@ -16,7 +16,7 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 import AdbIcon from '@material-ui/icons/Adb';
 import BusinessIcon from '@material-ui/icons/Business';
-import HeaderComponent from '../header-demo/HeaderComponent';
+import HeaderComponent from '../headers/HeaderComponent';
 import { HEADER_TYPE } from '../../config/contanst';
 
 const drawerWidth = 240;
@@ -96,30 +96,6 @@ export default function Campaigns() {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      {/*<AppBar*/}
-      {/*    position="fixed"*/}
-      {/*    className={clsx(classes.appBar, {*/}
-      {/*        [classes.appBarShift]: open,*/}
-      {/*    })}*/}
-      {/*>*/}
-      {/*    <HeaderComponent type={HEADER_TYPE.ALL_CAMPAIGNS}/>*/}
-      {/*    <Toolbar>*/}
-      {/*        <IconButton*/}
-      {/*            color="inherit"*/}
-      {/*            aria-label="open drawer"*/}
-      {/*            onClick={handleDrawerOpen}*/}
-      {/*            edge="start"*/}
-      {/*            className={clsx(classes.menuButton, {*/}
-      {/*                [classes.hide]: open,*/}
-      {/*            })}*/}
-      {/*        >*/}
-      {/*            <MenuIcon />*/}
-      {/*        </IconButton>*/}
-      {/*        <Typography variant="h6" noWrap>*/}
-      {/*           LOGO*/}
-      {/*        </Typography>*/}
-      {/*    </Toolbar>*/}
-      {/*</AppBar>*/}
       <HeaderComponent type={HEADER_TYPE.ALL_CAMPAIGNS} open={open} setOpen={setOpen} />
       <Drawer
         variant="permanent"

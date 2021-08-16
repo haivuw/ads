@@ -12,15 +12,89 @@ import {
 import PaginationComponent from '../pagination/Pagination';
 import LoadingComponent from '../loading/LoadingComponent';
 
+// const Styles = styled.div`
+//   .pagination {
+//     padding: 0.5rem;
+//   }
+//   .table {
+//     width: 100%;
+//     overflow: hidden;
+//     display: inline-block;
+//     border-spacing: 0;
+//     border: 1px solid black;
+//     .th {
+//       font-weight: bold;
+//       width: 80px;
+//       white-space: nowrap;
+//       overflow: hidden;
+//       text-overflow: ellipsis;
+//     }
+//
+//     .tr {
+//       :last-child {
+//         .td {
+//           border-bottom: 0;
+//         }
+//       }
+//     }
+//
+//     .th,
+//     .td {
+//       margin: 0;
+//       padding: 0.5rem;
+//       border-bottom: 1px solid black;
+//       border-right: 1px solid black;
+//
+//       ${
+//         '' /* In this example we use an absolutely position resizer,
+//        so this is required. */
+//       }
+//       position: relative;
+//
+//       :last-child {
+//         border-right: 0;
+//       }
+//
+//       .resizer {
+//         display: inline-block;
+//         // background: blue;
+//         width: 1px;
+//         height: 100%;
+//         position: absolute;
+//         right: 0;
+//         top: 0;
+//         transform: translateX(50%);
+//         z-index: 1;
+//         ${'' /* prevents from scrolling while dragging on touch devices */}
+//         touch-action:none;
+//
+//         &.isResizing {
+//           // background: red;
+//         }
+//       }
+//     }
+//   }
+// `;
+
 const Styles = styled.div`
+  padding: 1rem;
+  ${'' /* These styles are suggested for the table fill all available space in its containing element */}
+  display: block;
+  ${'' /* These styles are required for a horizontaly scrollable table overflow */}
+  // overflow: auto;
   .pagination {
     padding: 0.5rem;
   }
   .table {
-    display: inline-block;
     border-spacing: 0;
-    border: 1px solid black;
-    .th {
+    border: 1px solid #dadce0;
+    width: 100%;
+    overflow: hidden;
+     overflow-y: scroll;
+      overflow-x: scroll;
+      height: 400px;
+
+     .th {
       font-weight: bold;
       width: 80px;
       white-space: nowrap;
@@ -40,13 +114,12 @@ const Styles = styled.div`
     .td {
       margin: 0;
       padding: 0.5rem;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
+      border-bottom: 1px solid #dadce0;
+      border-right: 1px solid #dadce0;
+      color: #5f6368,
 
-      ${
-        '' /* In this example we use an absolutely position resizer,
-       so this is required. */
-      }
+      ${'' /* In this example we use an absolutely position resizer,
+       so this is required. */}
       position: relative;
 
       :last-child {
@@ -54,17 +127,15 @@ const Styles = styled.div`
       }
 
       .resizer {
-        display: inline-block;
+        right: 0;
         // background: blue;
-        width: 1px;
+        width: 5px;
         height: 100%;
         position: absolute;
-        right: 0;
         top: 0;
-        transform: translateX(50%);
         z-index: 1;
         ${'' /* prevents from scrolling while dragging on touch devices */}
-        touch-action:none;
+        touch-action :none;
 
         &.isResizing {
           // background: red;
@@ -72,7 +143,7 @@ const Styles = styled.div`
       }
     }
   }
-`;
+`
 
 const headerProps = (props, { column }) => getStyles(props, column.align);
 
@@ -104,7 +175,7 @@ const IndeterminateCheckbox = React.forwardRef(({ indeterminate, ...rest }, ref)
   );
 });
 
-function Table({ columns, data, fetchData, loading, pageCount: controlledPageCount }) {
+function Table({ columns, data, fetchData, loading, pageCount: controlledPageCount, isPagination }) {
   const defaultColumn = React.useMemo(
     () => ({
       // When using the useFlexLayout:
@@ -232,19 +303,19 @@ function Table({ columns, data, fetchData, loading, pageCount: controlledPageCou
           })}
         </div>
       </div>
-      <div className="pagination">
+      {isPagination ? <div className="pagination">
         <PaginationComponent
           count={pageSize}
           onChange={gotoPage}
           setPageSize={setPageSize}
           pageSize={pageSize}
         />
-      </div>
+      </div> : null }
     </>
   );
 }
 
-export default function TableComponent({ columns, data, fetchData, loading, pageCount }) {
+export default function TableComponent({ columns, data, fetchData, loading, pageCount, isPagination = true }) {
   return (
     <Styles>
       {loading ? <LoadingComponent loading={loading} children={null} /> : null}
@@ -254,6 +325,7 @@ export default function TableComponent({ columns, data, fetchData, loading, page
         fetchData={fetchData}
         loading={loading}
         pageCount={pageCount}
+        isPagination={isPagination}
       />
     </Styles>
   );
