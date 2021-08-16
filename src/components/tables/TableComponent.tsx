@@ -11,6 +11,19 @@ import {
 } from 'react-table';
 import PaginationComponent from '../pagination/Pagination';
 import LoadingComponent from '../loading/LoadingComponent';
+import Tooltip from '@material-ui/core/Tooltip';
+import Typography from '@material-ui/core/Typography';
+import { withStyles, Theme, makeStyles } from '@material-ui/core/styles';
+
+const HtmlTooltip = withStyles((theme: Theme) => ({
+  tooltip: {
+    backgroundColor: '#fff',
+    color: 'rgba(0, 0, 0, 0.87)',
+    maxWidth: 220,
+    fontSize: theme.typography.pxToRem(10),
+    border: '1px solid #dadde9',
+  },
+}))(Tooltip);
 
 // const Styles = styled.div`
 //   .pagination {
@@ -149,6 +162,7 @@ const headerProps = (props, { column }) => getStyles(props, column.align);
 
 const cellProps = (props, { cell }) => getStyles(props, cell.column.align);
 
+
 const getStyles = (props, align = 'left') => [
   props,
   {
@@ -268,20 +282,44 @@ function Table({ columns, data, fetchData, loading, pageCount: controlledPageCou
               className="tr"
             >
               {headerGroup.headers.map(column => (
-                <div
-                  {...column.getHeaderProps({ ...headerProps, ...column.getSortByToggleProps() })}
-                  className="th"
-                >
-                  {column.render('Header')}
-                  <span>{column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}</span>
-                  {/* Use column.getResizerProps to hook up the events correctly */}
-                  {column.canResize && (
+                  column?.tooltip ?
+                  <HtmlTooltip
+                      arrow
+                      interactive
+                      title={
+                        column?.tooltip
+                      }
+                  >
                     <div
-                      {...column.getResizerProps()}
-                      className={`resizer header ${column.isResizing ? 'isResizing' : ''}`}
-                    />
-                  )}
-                </div>
+                      {...column.getHeaderProps({ ...headerProps, ...column.getSortByToggleProps() })}
+                      className="th"
+                    >
+                      {column.render('Header')}
+                    <span>{column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}</span>
+                    {/* Use column.getResizerProps to hook up the events correctly */}
+                    {column.canResize && (
+                      <div
+                        {...column.getResizerProps()}
+                        className={`resizer header ${column.isResizing ? 'isResizing' : ''}`}
+                      />
+                    )}
+                    </div>
+                  </HtmlTooltip> :
+                  <div
+                      {...column.getHeaderProps({ ...headerProps, ...column.getSortByToggleProps() })}
+                      className="th"
+                  >
+                    {column.render('Header')}
+                    <span>{column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}</span>
+                    {/* Use column.getResizerProps to hook up the events correctly */}
+                    {column.canResize && (
+                        <div
+                            {...column.getResizerProps()}
+                            className={`resizer header ${column.isResizing ? 'isResizing' : ''}`}
+                        />
+                    )}
+                  </div>
+
               ))}
             </div>
           ))}
