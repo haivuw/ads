@@ -13,10 +13,10 @@ const newPerson = () => {
   return {
     campaignName: namor.generate({ words: 1, numbers: 0 }),
     budget: namor.generate({ words: 1, numbers: 0 }),
-    status: statusChance > 0.66 ? '有効' : '入札戦略学習中',
+    status: statusChance > 0.66 ? 'Eligible' : 'Bid strategy learning',
     optimisationScore: Math.floor(Math.random() * 30),
     account: namor.generate({ words: 1, numbers: 0 }),
-    campaignType: statusChance > 0.66 ? 'ショッピング' : 'ローカル',
+    campaignType: statusChance > 0.66 ? 'Shopping' : 'Local',
     conversions: Math.floor(Math.random() * 30),
     costConv: Math.floor(Math.random() * 30),
     impr: Math.floor(Math.random() * 30),
