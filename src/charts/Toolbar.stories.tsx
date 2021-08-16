@@ -45,9 +45,9 @@ const Template: ComponentStory<typeof ToolbarComponent> = args => {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleMenuClose}>時系列グラフ</MenuItem>
-            <MenuItem onClick={handleMenuClose}>スタックされた時系列グラフ</MenuItem>
-            <MenuItem onClick={handleMenuClose}>概要グラフ</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Time series chart</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Stacked time series chart</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Summary chart</MenuItem>
         </Menu>
     );
 
@@ -55,7 +55,27 @@ const Template: ComponentStory<typeof ToolbarComponent> = args => {
         <ToolbarComponent {...args}>
             <Box m={1} />
             <Box ml="auto" display="flex" alignItems="center">
+                <Button
+                    startIcon={<div style={{backgroundColor: 'blue', color: 'blue', height: 12, width: 12}} />}
+                    aria-haspopup="true"
+                    size={'small'}
+                    variant={'text'}
+                    aria-controls={menuId}
+                >
+                    Clicks
+                </Button>
                 <Box m={1} />
+                <Button
+                    startIcon={<div style={{backgroundColor: 'red', color: 'red', height: 12, width: 12}} />}
+                    aria-haspopup="true"
+                    size={'small'}
+                    variant={'text'}
+                    aria-controls={menuId}
+                >
+                    Cost
+                </Button>
+                {renderAllCampaignsMenu}
+
                 <Button
                     endIcon={<ViewColumnIcon />}
                     onClick={handleDrawerOpen}

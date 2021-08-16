@@ -14,6 +14,8 @@ import { HEADER_TYPE } from '../../config/contanst';
 import Button from '@material-ui/core/Button';
 import InputSearch from './InputSearch';
 import clsx from 'clsx';
+import SvgIcon from "@material-ui/core/SvgIcon";
+import { ReactComponent as Logo } from "./mercari.svg";
 import {TitlePage} from "../campaigns/TitlePage.stories";
 
 const drawerWidth = 240;
@@ -75,7 +77,7 @@ const useStyles = makeStyles(theme => ({
 }));
 const AccountButton = withStyles({
   root: {
-    fontSize: 20,
+    fontSize: 16,
     color: '#fff',
     textTransform: 'none',
     borderLeft: '1px solid #fff',
@@ -86,7 +88,7 @@ const AccountButton = withStyles({
 
 const ProfileButton = withStyles({
   root: {
-    fontSize: 20,
+    fontSize: 16,
     color: '#fff',
     textTransform: 'none',
     borderRadius: 0,
@@ -277,9 +279,9 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
             </IconButton>
           ) : null}
           {!open ? (
-            <Typography className={classes.title} variant="h3" noWrap>
-              LOGO
-            </Typography>
+              <SvgIcon style={{ fontSize: 60 }}>
+                <Logo fill={'#fff'}/>
+              </SvgIcon>
           ) : null}
           <div className={classes.sectionDesktop}>
             {type !== HEADER_TYPE.CREATE_CAMPAIGN ? (

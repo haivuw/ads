@@ -10,18 +10,55 @@ import AspectRatioIcon from '@material-ui/icons/AspectRatio';
 import SearchIcon from '@material-ui/icons/Search';
 import Filter from './Filter';
 import ViewColumnIcon from '@material-ui/icons/ViewColumn';
-
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import Tooltip from '@material-ui/core/Tooltip';
 export default {
   title: 'Components/Table/Toolbar',
   component: Toolbar,
   argTypes: {}
 } as ComponentMeta<typeof Toolbar>;
 
-const Template: ComponentStory<typeof Toolbar> = args => (
-  <Toolbar {...args}>
+const Template: ComponentStory<typeof Toolbar> = args => {
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const isMenuOpen = Boolean(anchorEl);
+
+    const handleDrawerOpen = (event: any) => {
+    setAnchorEl(event.currentTarget);
+    };
+    const handleMenuClose = () => {
+    setAnchorEl(null);
+    };
+    const menuId = 'download-type';
+
+    const renderAllCampaignsMenu = (
+    <Menu
+        id={menuId}
+        anchorEl={anchorEl}
+        anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right'
+        }}
+        transformOrigin={{
+            vertical: 'top',
+            horizontal: 'right'
+        }}
+        keepMounted
+        open={isMenuOpen}
+        onClose={handleMenuClose}
+    >
+        <MenuItem onClick={handleMenuClose}>Excel</MenuItem>
+        <MenuItem onClick={handleMenuClose}>.csv</MenuItem>
+        <MenuItem onClick={handleMenuClose}>.pdf</MenuItem>
+    </Menu>
+    );
+  return (<Toolbar {...args}>
+  <Tooltip title="Create a new campaigns">
     <Button style={{ minWidth: 'unset', padding: 6, color: 'white' }} color="primary">
       <AddIcon />
     </Button>
+  </Tooltip>
     <Box m={1} />
     <Filter />
     <Box ml="auto" display="flex" alignItems="center">
@@ -39,11 +76,17 @@ const Template: ComponentStory<typeof Toolbar> = args => (
           Columns
       </Button>
       <Box m={1} />
-      <Button
-          endIcon={<GetAppIcon />}
-          size={'small'}
-          variant={'text'}
-      >Download</Button>
+        <Button
+            endIcon={<GetAppIcon />}
+            onClick={handleDrawerOpen}
+            aria-haspopup="true"
+            size={'small'}
+            variant={'text'}
+            aria-controls={menuId}
+        >
+            Download
+        </Button>
+    {renderAllCampaignsMenu}
       <Box m={1} />
       <Button
           endIcon={<AspectRatioIcon />}
@@ -52,7 +95,7 @@ const Template: ComponentStory<typeof Toolbar> = args => (
       >Expand</Button>
     </Box>
   </Toolbar>
-);
+)};
 
 export const ToolbarWithChildren = Template.bind({});
 ToolbarWithChildren.args = { height: 50 };

@@ -12,8 +12,9 @@ import {
 const TimeSeriesChart = ({ data }) => (
   <ResponsiveContainer width="100%" height="100%">
     <LineChart data={data}>
-      <Line dataKey="clicks" stroke="#8884d8" />
-      <XAxis dataKey="time" tickFormatter={time => (time ? new Date(time).toDateString() : '')} />
+      <Line dataKey="clicks" stroke="blue" />
+      <Line dataKey="cost" stroke="red"/>
+      <XAxis dataKey="time" tickFormatter={time => (time ? new Date(time).toISOString().substring(0, 10) : '')} />
       <YAxis dataKey="clicks" tickLine={false} />
       <Tooltip labelFormatter={time => new Date(time).toDateString()} />
     </LineChart>
@@ -26,7 +27,10 @@ export const generateData = () => {
   let data = [];
   let temp = from;
   while (temp < to) {
-    data.push({ time: temp.getTime(), clicks: Math.floor(Math.random() * 100) });
+    data.push({
+      time: temp.getTime(),
+      clicks: Math.floor(Math.random() * 50),
+      cost: Math.floor(Math.random() * 50) });
     temp = addDays(temp, 1);
   }
   console.log(data);
