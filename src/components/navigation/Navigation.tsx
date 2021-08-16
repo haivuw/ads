@@ -118,25 +118,25 @@ export default function Navigation({ open, setOpen }) {
             <ListItemIcon>
               <DashboardIcon />
             </ListItemIcon>
-            <ListItemText primary={'概要'} />
+            <ListItemText primary={'Dashboard'} />
           </ListItem>
           <ListItem button>
             <ListItemIcon>
               <PeopleOutlineIcon />
             </ListItemIcon>
-            <ListItemText primary={'アカウント'} />
+            <ListItemText primary={'Accounts'} />
           </ListItem>
           <ListItem button>
             <ListItemIcon>
               <AdbIcon />
             </ListItemIcon>
-            <ListItemText primary={'キャンペーン'} />
+            <ListItemText primary={'Campaigns'} />
           </ListItem>
           <ListItem button>
             <ListItemIcon>
               <BusinessIcon />
             </ListItemIcon>
-            <ListItemText primary={'商品'} />
+            <ListItemText primary={'Products'} />
           </ListItem>
         </List>
       </Drawer>

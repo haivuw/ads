@@ -18,7 +18,6 @@ export default {
   //     children: 'Button'
   // }
 };
-
 export const Campaigns = () => {
     const breadcrumbs = [
         {
@@ -93,3 +92,6 @@ export const Campaigns = () => {
     </LayoutComponent>
   );
 };
+Campaigns.parameters = {
+    layout: 'fullscreen',
+}

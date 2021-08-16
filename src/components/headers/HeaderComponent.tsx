@@ -19,6 +19,7 @@ import {TitlePage} from "../campaigns/TitlePage.stories";
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   appBar: {
+    backgroundColor: '#5f6368',
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
@@ -46,7 +47,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   buttonAccount: {
-    backgroundColor: '#3f51b5'
+    backgroundColor: '#5f6368'
   },
   sectionDesktop: {
     display: 'none',
@@ -177,8 +178,8 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
       open={isAllCampaignsMenuOpen}
       onClose={handleAllCampaignsMenuClose}
     >
-      <MenuItem onClick={handleAllCampaignsMenuClose}>アカウント一覧1</MenuItem>
-      <MenuItem onClick={handleAllCampaignsMenuClose}>アカウント一覧2</MenuItem>
+      <MenuItem onClick={handleAllCampaignsMenuClose}>Merchant name 1</MenuItem>
+      <MenuItem onClick={handleAllCampaignsMenuClose}>Merchant name 2</MenuItem>
     </Menu>
   );
 
@@ -198,9 +199,9 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
       open={isNameCampaignsMenuOpen}
       onClose={handleNameCampaignMenuClose}
     >
-      <MenuItem onClick={handleNameCampaignMenuClose}>キャンペーン名1</MenuItem>
-      <MenuItem onClick={handleNameCampaignMenuClose}>キャンペーン名2</MenuItem>
-      <MenuItem onClick={handleNameCampaignMenuClose}>キャンペーン名3</MenuItem>
+      <MenuItem onClick={handleNameCampaignMenuClose}>Campaign Name 1</MenuItem>
+      <MenuItem onClick={handleNameCampaignMenuClose}>Campaign Name 2</MenuItem>
+      <MenuItem onClick={handleNameCampaignMenuClose}>Campaign Name 3</MenuItem>
     </Menu>
   );
 
@@ -217,12 +218,12 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
     >
       {type !== HEADER_TYPE.CREATE_CAMPAIGN ? (
         <MenuItem onClick={handleAllCampaignsMenuOpen}>
-          <p>新しいキャンペーンを作成</p>
+          <p>Merchant name</p>
         </MenuItem>
       ) : null}
       {type === HEADER_TYPE.ALL_CAMPAIGNS ? (
         <MenuItem onClick={handleNameCampaignMenuOpen}>
-          <p>キャンペーン名</p>
+          <p>Campaign name</p>
         </MenuItem>
       ) : null}
 
@@ -236,7 +237,7 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
           >
             <AccountCircle />
           </IconButton>
-          <p>アカウント名</p>
+          <p>Account Name</p>
         </MenuItem>
       ) : null}
     </Menu>
@@ -287,11 +288,11 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
                 onClick={handleAllCampaignsMenuOpen}
                 // endIcon={<ArrowDownwardIcon fontSize="inherit" />}
               >
-                アカウント一覧
+                Merchant name
               </AccountButton>
             ) : (
               <Typography variant={'h6'} className={classes.titleCreate}>
-                新しいキャンペーンを作成
+                Create a new campaign
               </Typography>
             )}
 
@@ -301,7 +302,7 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
                 onClick={handleNameCampaignMenuOpen}
                 // endIcon={<ArrowDownwardIcon fontSize="inherit" />}
               >
-                キャンペーン名
+                Campaign Name
               </AccountButton>
             ) : null}
           </div>
@@ -315,7 +316,7 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
                 onClick={handleProfileMenuOpen}
                 endIcon={<AccountCircle fontSize="inherit" />}
               >
-                アカウント名
+                Account Name
               </ProfileButton>
             ) : null}
           </div>

@@ -84,7 +84,6 @@ const useStyles = makeStyles((theme: Theme) =>
     }
   })
 );
-
 export default function Campaigns() {
   const classes = useStyles();
   const theme = useTheme();
