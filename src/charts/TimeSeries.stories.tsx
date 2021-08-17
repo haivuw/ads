@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import TimeSeriesChart, { generateData } from './TimeSeries';
 
 export default {
-  title: 'Charts/TimeSeries',
+  title: 'Components/Charts/TimeSeries',
   component: TimeSeriesChart,
   argTypes: {}
 } as ComponentMeta<typeof TimeSeriesChart>;

@@ -49,6 +49,16 @@ const useStyles = makeStyles((theme: Theme) =>
       flexShrink: 0,
       whiteSpace: 'nowrap'
     },
+      active: {
+        backgroundColor: '#dadce0',
+        color: '#185abc',
+        boxShadow: 'inset 4px 0 0 0 #185abc',
+        fontWeight: 500,
+      },
+      activeIcon: {
+          color: '#185abc',
+          fontWeight: 500,
+      },
     drawerOpen: {
       width: drawerWidth,
       transition: theme.transitions.create('width', {
@@ -126,9 +136,9 @@ export default function Navigation({ open, setOpen }) {
             </ListItemIcon>
             <ListItemText primary={'Accounts'} />
           </ListItem>
-          <ListItem button>
+          <ListItem button className={classes.active}>
             <ListItemIcon>
-              <AdbIcon />
+              <AdbIcon className={classes.activeIcon}/>
             </ListItemIcon>
             <ListItemText primary={'Campaigns'} />
           </ListItem>

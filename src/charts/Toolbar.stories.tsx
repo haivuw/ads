@@ -5,14 +5,11 @@ import Button from 'components/Buttons';
 import { Box, InputAdornment } from '@material-ui/core';
 import AspectRatioIcon from '@material-ui/icons/AspectRatio';
 import ViewColumnIcon from '@material-ui/icons/ViewColumn';
-import { Picker } from 'stories/DateRange.stories';
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import {Breadcrumbs} from "../components/breadcrumbs/Breadcrumbs.stories";
-import Typography from "@material-ui/core/Typography";
 
 export default {
-  title: 'Charts/Toolbar',
+  title: 'Components/Charts/Toolbar',
   component: ToolbarComponent,
   argTypes: {}
 } as ComponentMeta<typeof ToolbarComponent>;

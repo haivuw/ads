@@ -70,7 +70,7 @@ export const Campaigns = () => {
           <div style={{padding: '1rem'}}>
               <Toolbar />
               <Box m={1} />
-              <div style={{ height: 300, position: 'relative'}}>
+              <div style={{ height: 300}}>
                   <TimeSeriesChart data={generateData()} />
               </div>
               <Box m={1} />

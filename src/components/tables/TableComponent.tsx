@@ -103,9 +103,9 @@ const Styles = styled.div`
     border: 1px solid #dadce0;
     width: 100%;
     overflow: hidden;
-     overflow-y: scroll;
-      overflow-x: scroll;
-      height: 400px;
+     overflow-y: auto;
+      overflow-x: auto;
+      // height: 400px;
 
      .th {
       font-weight: bold;
@@ -113,6 +113,19 @@ const Styles = styled.div`
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+    div::-webkit-scrollbar {
+      width: 1em;
+      height:10px;
+    }
+     
+    div::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    }
+      
+    div::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid slategrey;
     }
 
     .tr {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LoadingComponent from './LoadingComponent';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 export default {
-  title: 'Components/Loading',
+  title: 'Components/Views/Loading',
   component: LoadingComponent,
   argTypes: {
     loading: {

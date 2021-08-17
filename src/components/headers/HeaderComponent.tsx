@@ -246,7 +246,7 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
               </Typography>
             )}
 
-            {type === HEADER_TYPE.ALL_CAMPAIGNS ? (
+            {type === HEADER_TYPE.ONE_CAMPAIGN ? (
                 <SelectMenuComponent
                     buttonText={'Campaign Name'}
                     options={optionCampaign}

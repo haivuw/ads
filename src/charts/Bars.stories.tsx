@@ -4,7 +4,7 @@ import BarsChart from './Bars';
 import addDays from 'date-fns/addDays';
 
 export default {
-  title: 'Charts/Bars',
+  title: 'Components/Charts/Bars',
   component: BarsChart,
   argTypes: {}
 } as ComponentMeta<typeof BarsChart>;

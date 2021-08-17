@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import TextInput from 'components/form-inputs/TextInput';
 
 export default {
-  title: 'Form/Text',
+  title: 'Components/Views/TextInput',
   component: TextInput,
   argTypes: {
     backgroundColor: { control: 'color' }

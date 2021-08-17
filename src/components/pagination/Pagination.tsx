@@ -8,8 +8,12 @@ import InputBase from '@material-ui/core/InputBase';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     pagination: {
-      display: 'flex'
-    }
+      display: 'flex',
+    },
+      container:{
+        width: '100%',
+        textAlign: 'center'
+      }
   })
 );
 
@@ -32,6 +36,7 @@ export default function PaginationComponent({ count, onChange, pageSize, setPage
         backgroundColor: theme.palette.background.paper,
         border: '1px solid #ced4da',
         fontSize: 16,
+        fontWeight: 'bold',
         padding: '5px 26px 5px 12px',
         marginLeft: 20,
         transition: theme.transitions.create(['border-color', 'box-shadow']),
@@ -45,26 +50,28 @@ export default function PaginationComponent({ count, onChange, pageSize, setPage
   )(InputBase);
 
   const onChange1 = (event, value) => {
-    console.log(111111, value);
+    // console.log(111111, value);
     onChange(value);
   };
 
   return (
-    <div className={classes.pagination}>
-      <Pagination count={count} variant="outlined" shape="rounded" onChange={onChange1} />
-      <Select
-        labelId="demo-customized-select-label"
-        id="demo-customized-select"
-        value={pageSize}
-        onChange={handleChange}
-        input={<BootstrapInput />}
-      >
-        <MenuItem value={10}>10</MenuItem>
-        <MenuItem value={20}>20</MenuItem>
-        <MenuItem value={30}>30</MenuItem>
-        <MenuItem value={50}>50</MenuItem>
-        <MenuItem value={100}>100</MenuItem>
-      </Select>
+    <div className={classes.container}>
+        <div className={classes.pagination}>
+          <Pagination style={{margin: 'auto'}} count={count} variant="outlined" shape="rounded" onChange={onChange1} />
+          <Select
+            labelId="demo-customized-select-label"
+            id="demo-customized-select"
+            value={pageSize}
+            onChange={handleChange}
+            input={<BootstrapInput />}
+          >
+            <MenuItem value={10}>10</MenuItem>
+            <MenuItem value={20}>20</MenuItem>
+            <MenuItem value={30}>30</MenuItem>
+            <MenuItem value={50}>50</MenuItem>
+            <MenuItem value={100}>100</MenuItem>
+          </Select>
+        </div>
     </div>
   );
 }

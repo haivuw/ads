@@ -3,7 +3,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
-import { Picker } from 'stories/DateRange.stories';
+import { Picker } from 'components/views/DateRange.stories';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function TitleComponent({ text }) {
+export default function TitleComponent({ text, isPicker = true }) {
   const classes = useStyles();
   return (
     <div className={classes.container}>
@@ -26,7 +26,7 @@ export default function TitleComponent({ text }) {
       <Box m={1} />
       <Box ml="auto" display="flex" alignItems="center">
         <Box m={1} />
-        <Picker />
+        {isPicker ? <Picker /> : null }
       </Box>
     </div>
   );

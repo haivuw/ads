@@ -4,7 +4,7 @@ import Button from 'components/Buttons';
 import AccountCircle from "@material-ui/icons/AccountCircle";
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Views/Button',
   component: Button,
   argTypes: {
     variant: {
