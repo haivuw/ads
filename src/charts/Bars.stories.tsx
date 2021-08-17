@@ -26,7 +26,7 @@ const generateData = () => {
   let count = 0;
   while (count < camp_num) {
     data.push({
-      name: `campaign ${count}`,
+      name: `Campaign ${count}`,
       clicks: Math.floor(Math.random() * 100) ,
       cost: Math.floor(Math.random() * 100) ,
     });

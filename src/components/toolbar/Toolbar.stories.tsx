@@ -62,11 +62,13 @@ const Template: ComponentStory<typeof Toolbar> = args => {
     <Box m={1} />
     <Filter />
     <Box ml="auto" display="flex" alignItems="center">
-      <TextInput
-        style={{ height: 28 }}
-        placeholder="Search campaigns"
-        startAdornment={<SearchIcon />}
-      />
+        <Button
+            endIcon={<SearchIcon />}
+            size={'small'}
+            variant={'text'}
+        >
+            Search
+        </Button>
       <Box m={1} />
       <Button
           endIcon={<ViewColumnIcon />}

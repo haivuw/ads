@@ -14,9 +14,8 @@ import { HEADER_TYPE } from '../../config/contanst';
 import Button from '@material-ui/core/Button';
 import InputSearch from './InputSearch';
 import clsx from 'clsx';
-import SvgIcon from "@material-ui/core/SvgIcon";
-import { ReactComponent as Logo } from "./mercari.svg";
-import {TitlePage} from "../campaigns/TitlePage.stories";
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import SelectMenuComponent from "../select/SelectInput";
 
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
@@ -80,7 +79,7 @@ const AccountButton = withStyles({
     fontSize: 16,
     color: '#fff',
     textTransform: 'none',
-    borderLeft: '1px solid #fff',
+    // borderLeft: '1px solid #fff',
     borderRadius: 0,
     marginLeft: 18
   }
@@ -103,11 +102,7 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
   const [anchorNameCampaign, setAnchorNameCampaigns] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-  const isMenuOpen = Boolean(anchorEl);
-  const isAllCampaignsMenuOpen = Boolean(anchorAllCampaigns);
-  const isNameCampaignsMenuOpen = Boolean(anchorNameCampaign);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-  // const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
     if (setOpen) {
@@ -131,81 +126,36 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
     setMobileMoreAnchorEl(null);
   };
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-  const handleNameCampaignMenuClose = () => {
-    setAnchorNameCampaigns(null);
-    handleMobileMenuClose();
-  };
-  const handleAllCampaignsMenuClose = () => {
-    setAnchorAllCampaigns(null);
-    handleMobileMenuClose();
-  };
-
   const handleMobileMenuOpen = (event: any) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
-  const menuId = 'primary-search-account-menu';
-  const allCampaignsId = 'all-campaigns-menu';
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
-  );
-  const renderAllCampaignsMenu = (
-    <Menu
-      anchorEl={anchorAllCampaigns}
-      anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'center'
-      }}
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'center'
-      }}
-      id={allCampaignsId}
-      keepMounted
-      open={isAllCampaignsMenuOpen}
-      onClose={handleAllCampaignsMenuClose}
-    >
-      <MenuItem onClick={handleAllCampaignsMenuClose}>Merchant name 1</MenuItem>
-      <MenuItem onClick={handleAllCampaignsMenuClose}>Merchant name 2</MenuItem>
-    </Menu>
-  );
-
-  const renderNameCampaignsMenu = (
-    <Menu
-      anchorEl={anchorNameCampaign}
-      anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'center'
-      }}
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'center'
-      }}
-      id={allCampaignsId}
-      keepMounted
-      open={isNameCampaignsMenuOpen}
-      onClose={handleNameCampaignMenuClose}
-    >
-      <MenuItem onClick={handleNameCampaignMenuClose}>Campaign Name 1</MenuItem>
-      <MenuItem onClick={handleNameCampaignMenuClose}>Campaign Name 2</MenuItem>
-      <MenuItem onClick={handleNameCampaignMenuClose}>Campaign Name 3</MenuItem>
-    </Menu>
-  );
+  const optionAccounts= [
+    {
+      name: 'Profile'
+    },
+    {
+      name: 'My account'
+    },
+  ]
+  const optionMerchants = [
+    {
+      name: 'Merchant name 1'
+    },
+    {
+      name: 'Merchant name 2'
+    },
+  ]
+  const optionCampaign = [
+    {
+      name: 'Campaign Name 1'
+    },
+    {
+      name: 'Campaign Name 2'
+    },
+    {
+      name: 'Campaign Name 3'
+    }
+  ]
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
@@ -279,19 +229,17 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
             </IconButton>
           ) : null}
           {!open ? (
-              <SvgIcon style={{ fontSize: 60 }}>
-                <Logo fill={'#fff'}/>
-              </SvgIcon>
+              <Typography className={classes.title} variant="h3" noWrap>
+                LOGO
+              </Typography>
           ) : null}
           <div className={classes.sectionDesktop}>
             {type !== HEADER_TYPE.CREATE_CAMPAIGN ? (
-              <AccountButton
-                variant={'text'}
-                onClick={handleAllCampaignsMenuOpen}
-                // endIcon={<ArrowDownwardIcon fontSize="inherit" />}
-              >
-                Merchant name
-              </AccountButton>
+                <SelectMenuComponent
+                    buttonText={'Merchant Name'}
+                    options={optionMerchants}
+                    endIcon={<ArrowDropDownIcon fontSize="inherit"/>}
+                />
             ) : (
               <Typography variant={'h6'} className={classes.titleCreate}>
                 Create a new campaign
@@ -299,27 +247,23 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
             )}
 
             {type === HEADER_TYPE.ALL_CAMPAIGNS ? (
-              <AccountButton
-                variant={'text'}
-                onClick={handleNameCampaignMenuOpen}
-                // endIcon={<ArrowDownwardIcon fontSize="inherit" />}
-              >
-                Campaign Name
-              </AccountButton>
+                <SelectMenuComponent
+                    buttonText={'Campaign Name'}
+                    options={optionCampaign}
+                    endIcon={<ArrowDropDownIcon fontSize="inherit"/>}
+                />
             ) : null}
           </div>
 
           <div className={classes.grow} />
-          {type !== HEADER_TYPE.CREATE_CAMPAIGN ? <InputSearch /> : null}
+          {type !== HEADER_TYPE.CREATE_CAMPAIGN ? <InputSearch handleSearch={console.log('search')}/> : null}
           <div className={classes.sectionDesktop}>
             {type !== HEADER_TYPE.CREATE_CAMPAIGN ? (
-              <ProfileButton
-                variant={'text'}
-                onClick={handleProfileMenuOpen}
-                endIcon={<AccountCircle fontSize="inherit" />}
-              >
-                Account Name
-              </ProfileButton>
+                <SelectMenuComponent
+                    buttonText={'Account Name'}
+                    options={optionAccounts}
+                    endIcon={<AccountCircle fontSize="inherit" />}
+                />
             ) : null}
           </div>
           <div className={classes.sectionMobile}>
@@ -336,9 +280,6 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
-      {renderAllCampaignsMenu}
-      {renderNameCampaignsMenu}
     </div>
   );
 }

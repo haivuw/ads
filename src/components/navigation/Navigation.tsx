@@ -15,8 +15,6 @@ import DashboardIcon from '@material-ui/icons/Dashboard';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 import AdbIcon from '@material-ui/icons/Adb';
 import BusinessIcon from '@material-ui/icons/Business';
-import {ReactComponent as Logo} from "./mercari.svg";
-import SvgIcon from "@material-ui/core/SvgIcon";
 
 const drawerWidth = 240;
 
@@ -107,9 +105,9 @@ export default function Navigation({ open, setOpen }) {
         }}
       >
         <div className={classes.toolbar}>
-            <SvgIcon style={{ fontSize: 110 }}>
-                <Logo fill={'#fff'}/>
-            </SvgIcon>
+            <Typography variant="h3" noWrap>
+                LOGO
+            </Typography>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>

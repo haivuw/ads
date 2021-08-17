@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function InputSearch() {
+export default function InputSearch({handleSearch}) {
   const classes = useStyles();
   return (
     <div className={classes.search}>
@@ -59,6 +59,7 @@ export default function InputSearch() {
           input: classes.inputInput
         }}
         inputProps={{ 'aria-label': 'search' }}
+        onChange={handleSearch ? handleSearch : null}
       />
     </div>
   );

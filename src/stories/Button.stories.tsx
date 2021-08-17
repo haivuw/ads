@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Button from 'components/Buttons';
+import AccountCircle from "@material-ui/icons/AccountCircle";
 
 export default {
   title: 'Components/Button',
@@ -29,4 +30,10 @@ export const Loading = Template.bind({});
 Loading.args = {
   loading: true,
   children: 'Processing'
+};
+
+export const Icon = Template.bind({});
+Icon.args = {
+  children: 'Account',
+  endIcon: <AccountCircle />
 };

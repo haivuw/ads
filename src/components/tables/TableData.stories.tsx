@@ -5,10 +5,10 @@ import makeData from './MakeData';
 
 export default {
   title: 'Components/Table',
-  component: TableComponent
-  // args: {
-  //     children: 'Button'
-  // }
+  component: TableComponent,
+  isPagination: {
+    control: 'boolean'
+  }
 };
 export const Table = () => {
   const serverData = makeData(1000);
@@ -52,6 +52,7 @@ export const Table = () => {
       pageCount={pageCount}
       fetchData={fetchData}
       data={data}
+      isPagination={false}
     />
   );
 };
@@ -60,8 +61,8 @@ export const Table = () => {
 
 // export const PrimaryA = Template.bind({})
 Table.args = {
-  columns: COLUMNS_CAMPAIGNS
-  // children: 'Primary Args',
+  columns: COLUMNS_CAMPAIGNS,
+  isPagination: 'Primary Args',
 };
 
 // export const SecondaryA = Template.bind({})
