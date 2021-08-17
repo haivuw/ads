@@ -24,13 +24,13 @@ export const SelectMenu = Template.bind({});
 
 const optionCampaign = [
   {
-    name: 'Campaign Name 1'
+    name: 'Campaign name 1'
   },
   {
-    name: 'Campaign Name 2'
+    name: 'Campaign name 2'
   },
   {
-    name: 'Campaign Name 3'
+    name: 'Campaign name 3'
   }
 ]
 const endIcon = <ArrowDropDownIcon fontSize="inherit"/>;
@@ -38,7 +38,7 @@ const style =  {
      color: '#000'
   }
 SelectMenu.args = {
-  buttonText: 'Campaign name',
+  buttonText: 'Campaign name 2',
   options: optionCampaign,
   endIcon: endIcon,
   optionButton: {style},
