@@ -66,6 +66,7 @@ const Template: ComponentStory<typeof Toolbar> = args => {
             endIcon={<SearchIcon />}
             size={'small'}
             variant={'text'}
+            style={{textTransform: 'none'}}
         >
             Search
         </Button>
@@ -73,6 +74,7 @@ const Template: ComponentStory<typeof Toolbar> = args => {
       <Button
           endIcon={<ViewColumnIcon />}
           size={'small'}
+          style={{textTransform: 'none'}}
           variant={'text'}
       >
           Columns
@@ -84,6 +86,7 @@ const Template: ComponentStory<typeof Toolbar> = args => {
             aria-haspopup="true"
             size={'small'}
             variant={'text'}
+            style={{textTransform: 'none'}}
             aria-controls={menuId}
         >
             Download
@@ -93,6 +96,7 @@ const Template: ComponentStory<typeof Toolbar> = args => {
       <Button
           endIcon={<AspectRatioIcon />}
           size={'small'}
+          style={{textTransform: 'none'}}
           variant={'text'}
       >Expand</Button>
     </Box>

@@ -147,13 +147,13 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
   ]
   const optionCampaign = [
     {
-      name: 'Campaign Name 1'
+      name: 'Campaign name 1'
     },
     {
-      name: 'Campaign Name 2'
+      name: 'Campaign name 2'
     },
     {
-      name: 'Campaign Name 3'
+      name: 'Campaign name 3'
     }
   ]
 
@@ -236,7 +236,7 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
           <div className={classes.sectionDesktop}>
             {type !== HEADER_TYPE.CREATE_CAMPAIGN ? (
                 <SelectMenuComponent
-                    buttonText={'Merchant Name'}
+                    buttonText={'Merchant name 1'}
                     options={optionMerchants}
                     endIcon={<ArrowDropDownIcon fontSize="inherit"/>}
                 />
@@ -248,7 +248,7 @@ export default function HeaderComponent({ type, setOpen = null, open = null }) {
 
             {type === HEADER_TYPE.ONE_CAMPAIGN ? (
                 <SelectMenuComponent
-                    buttonText={'Campaign Name'}
+                    buttonText={'Campaign name 3'}
                     options={optionCampaign}
                     endIcon={<ArrowDropDownIcon fontSize="inherit"/>}
                 />

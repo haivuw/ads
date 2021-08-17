@@ -16,6 +16,7 @@ const Filter: FC<any> = props => {
         onClick={() => setOpen(!open)}
         variant="text"
         endIcon={<ArrowDropDownIcon />}
+        style={{textTransform: 'none'}}
       >
         Filter
       </Button>

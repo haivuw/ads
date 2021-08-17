@@ -57,6 +57,7 @@ const Template: ComponentStory<typeof ToolbarComponent> = args => {
                     aria-haspopup="true"
                     size={'small'}
                     variant={'text'}
+                    style={{textTransform: 'none'}}
                     aria-controls={menuId}
                 >
                     Clicks
@@ -67,6 +68,7 @@ const Template: ComponentStory<typeof ToolbarComponent> = args => {
                     aria-haspopup="true"
                     size={'small'}
                     variant={'text'}
+                    style={{textTransform: 'none'}}
                     aria-controls={menuId}
                 >
                     Cost
@@ -79,6 +81,7 @@ const Template: ComponentStory<typeof ToolbarComponent> = args => {
                     aria-haspopup="true"
                     size={'small'}
                     variant={'text'}
+                    style={{textTransform: 'none'}}
                     aria-controls={menuId}
                 >
                     Chart type
@@ -88,6 +91,7 @@ const Template: ComponentStory<typeof ToolbarComponent> = args => {
                 <Button
                     endIcon={<AspectRatioIcon />}
                     size={'small'}
+                    style={{textTransform: 'none'}}
                     variant={'text'}
                 >
                     Expand
