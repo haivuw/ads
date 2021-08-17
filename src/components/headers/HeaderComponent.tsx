@@ -66,7 +66,7 @@ const useStyles = makeStyles(theme => ({
     display: 'none'
   },
   titleCreate: {
-    borderLeft: '1px solid #fff',
+    // borderLeft: '1px solid #fff',
     borderRadius: 0,
     marginLeft: 20,
     paddingLeft: 20,
