@@ -12,8 +12,8 @@ import {
 const TimeSeriesChart = ({ data }) => (
   <ResponsiveContainer width="100%" height="100%">
     <LineChart data={data}>
-      <Line dataKey="clicks" stroke="blue" />
-      <Line dataKey="cost" stroke="red"/>
+      <Line dataKey="clicks" stroke="#3b78e7" />
+      <Line dataKey="cost" stroke="#d23f31"/>
       <XAxis dataKey="time" tickFormatter={time => (time ? new Date(time).toISOString().substring(5, 10) : '')} />
       <YAxis dataKey="clicks" tickLine={false} />
       <Tooltip labelFormatter={time => new Date(time).toISOString().substring(0, 10)} />

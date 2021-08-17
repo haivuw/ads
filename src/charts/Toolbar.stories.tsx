@@ -53,7 +53,7 @@ const Template: ComponentStory<typeof ToolbarComponent> = args => {
             <Box m={1} />
             <Box ml="auto" display="flex" alignItems="center">
                 <Button
-                    startIcon={<div style={{backgroundColor: 'blue', color: 'blue', height: 12, width: 12}} />}
+                    startIcon={<div style={{backgroundColor: '#3b78e7', color: '#3b78e7', height: 12, width: 12}} />}
                     aria-haspopup="true"
                     size={'small'}
                     variant={'text'}
@@ -64,7 +64,7 @@ const Template: ComponentStory<typeof ToolbarComponent> = args => {
                 </Button>
                 <Box m={1} />
                 <Button
-                    startIcon={<div style={{backgroundColor: 'red', color: 'red', height: 12, width: 12}} />}
+                    startIcon={<div style={{backgroundColor: '#d23f31', color: '#d23f31', height: 12, width: 12}} />}
                     aria-haspopup="true"
                     size={'small'}
                     variant={'text'}

@@ -19,8 +19,8 @@ const CampaignBarChart: FC<{ data: any }> = ({ data }) => {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Bar dataKey="clicks" fill="blue" />
-        <Bar dataKey="cost" fill="red" />
+        <Bar dataKey="clicks" fill="#3b78e7" />
+        <Bar dataKey="cost" fill="#d23f31" />
       </BarChart>
     </ResponsiveContainer>
   );
