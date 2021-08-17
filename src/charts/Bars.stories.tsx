@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import BarsChart from './Bars';
+import BarsChart, {generateData} from './Bars';
 import addDays from 'date-fns/addDays';
 
 export default {
@@ -19,21 +19,6 @@ Base.decorators = [
     </div>
   )
 ];
-
-const generateData = () => {
-  const camp_num = Math.floor(Math.random() * (10 - 4 + 1)) + 4;
-  let data = [];
-  let count = 0;
-  while (count < camp_num) {
-    data.push({
-      name: `Campaign ${count}`,
-      clicks: Math.floor(Math.random() * 100) ,
-      cost: Math.floor(Math.random() * 100) ,
-    });
-    count++;
-  }
-  return data;
-};
 
 Base.args = {
   data: generateData()

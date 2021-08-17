@@ -3,14 +3,13 @@ import { Box } from '@material-ui/core';
 import { ToolbarWithChildren } from 'components/toolbar/Toolbar.stories';
 import React, { useState, useEffect } from 'react';
 import LayoutComponent from '../layout/Layout';
-import TimeSeriesChart, { generateData } from 'charts/TimeSeries';
 import {Toolbar} from "../../charts/Toolbar.stories";
 import TitleComponent from "./Title";
 import '../../App.css';
-import { Container } from '@material-ui/core';
 import makeData from "../tables/MakeData";
 import TableComponent from "../tables/TableComponent";
 import {COLUMNS_CAMPAIGNS} from "../../config/contanst";
+import CampaignBarChart, {generateData} from "../../charts/Bars";
 export default {
   title: 'Screens/Campaigns',
   component: LayoutComponent
@@ -71,7 +70,7 @@ export const Campaigns = () => {
               <Toolbar />
               <Box m={1} />
               <div style={{ height: 300}}>
-                  <TimeSeriesChart data={generateData()} />
+                  <CampaignBarChart data={generateData()} />
               </div>
               <Box m={1} />
           </div>
