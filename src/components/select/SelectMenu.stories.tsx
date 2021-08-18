@@ -4,7 +4,7 @@ import {ComponentMeta, ComponentStory} from "@storybook/react";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 
 export default {
-  title: 'Layouts/Header/SelectMenu',
+  title: 'Components/Atoms/SelectMenu',
   component: SelectInputComponent,
   argTypes: {
     buttonText: {

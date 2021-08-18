@@ -3,7 +3,7 @@ import BreadcrumbsComponent from './Breadcrumbs';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
-    title: 'Layouts/Breadcrumbs',
+    title: 'Components/Atoms/Breadcrumbs',
     component: BreadcrumbsComponent,
     argTypes: {
         breadcrumbs: {

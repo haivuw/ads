@@ -3,7 +3,7 @@ import TitleComponent from './Title';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
-    title: 'Layouts/TitlePage',
+    title: 'Components/Atoms/TitlePage',
     component: TitleComponent,
     argTypes: {
         text: {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ToolbarComponent from './Toolbar';
 import Button from 'components/Buttons';
@@ -7,6 +7,7 @@ import AspectRatioIcon from '@material-ui/icons/AspectRatio';
 import ViewColumnIcon from '@material-ui/icons/ViewColumn';
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import SnackbarComponent from "../components/Snackbar/Snackbar";
 
 export default {
   title: 'Components/Charts/Toolbar',
@@ -17,6 +18,8 @@ export default {
 const Template: ComponentStory<typeof ToolbarComponent> = args => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const isMenuOpen = Boolean(anchorEl);
+    const [message, setMessage] = React.useState('');
+    const [key, setKey] = React.useState(Math.random);
 
     const handleDrawerOpen = (event: any) => {
         setAnchorEl(event.currentTarget);
@@ -25,6 +28,9 @@ const Template: ComponentStory<typeof ToolbarComponent> = args => {
         setAnchorEl(null);
     };
     const menuId = 'type-chart';
+    useEffect(() => {
+        setKey(Math.random)
+    }, [message])
 
     const renderAllCampaignsMenu = (
         <Menu
@@ -92,10 +98,12 @@ const Template: ComponentStory<typeof ToolbarComponent> = args => {
                     endIcon={<AspectRatioIcon />}
                     size={'small'}
                     style={{textTransform: 'none'}}
+                    onClick={() => setMessage('This is expand function')}
                     variant={'text'}
                 >
                     Expand
                 </Button>
+                {message ? <SnackbarComponent key={key} message={message}/> : null }
             </Box>
         </ToolbarComponent>
     );

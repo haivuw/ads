@@ -46,6 +46,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     drawer: {
       width: drawerWidth,
+      backgroundColor: '#f1f3f4',
       flexShrink: 0,
       whiteSpace: 'nowrap'
     },
@@ -61,12 +62,14 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     drawerOpen: {
       width: drawerWidth,
+      backgroundColor: '#f1f3f4',
       transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen
       })
     },
     drawerClose: {
+      backgroundColor: '#f1f3f4',
       transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen

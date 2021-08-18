@@ -2,7 +2,7 @@ import React from 'react';
 import LogoComponent from './Logo';
 
 export default {
-  title: 'Layouts/Logo',
+  title: 'Components/Atoms/Logo',
   component: LogoComponent,
   argTypes: {
     color: {

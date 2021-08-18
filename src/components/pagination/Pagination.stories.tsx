@@ -3,7 +3,7 @@ import PaginationComponent from './Pagination';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 export default {
-  title: 'Components/Views/Pagination',
+  title: 'Components/Atoms/Pagination',
   component: PaginationComponent,
   argTypes: {
     count: {

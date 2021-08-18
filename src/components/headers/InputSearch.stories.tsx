@@ -3,7 +3,7 @@ import InputSearch from './InputSearch';
 import {ComponentMeta, ComponentStory} from "@storybook/react";
 
 export default {
-  title: 'Layouts/Header/InputSearch',
+  title: 'Components/Atoms/InputSearch',
   component: InputSearch,
   argTypes: {
     handleSearch: {

@@ -5,7 +5,7 @@ import DateRangePicker from 'components/date-range-picker';
 import { Range } from 'react-date-range';
 
 export default {
-  title: 'Components/Views/DateRangePicker',
+  title: 'Components/Atoms/DateRangePicker',
   component: DateRangePicker,
   argTypes: {
     direction: {

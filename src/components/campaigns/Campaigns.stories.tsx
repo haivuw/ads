@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { Box } from '@material-ui/core';
-import { ToolbarWithChildren } from 'components/toolbar/Toolbar.stories';
+import { ToolbarWithChildren } from 'components/tables/toolbar/Toolbar.stories';
 import React, { useState, useEffect } from 'react';
 import LayoutComponent from '../layout/Layout';
 import {Toolbar} from "../../charts/Toolbar.stories";
@@ -18,17 +18,6 @@ export default {
   // }
 };
 export const Campaigns = () => {
-    const breadcrumbs = [
-        {
-            link: '/',
-            name: 'Home',
-        },
-        {
-            link: '',
-            name: 'Campaigns',
-        }
-    ]
-
     const serverData = makeData(1000);
     const [loading, setLoading] = React.useState(false);
     const [data, setData] = React.useState([]);
@@ -69,24 +58,25 @@ export const Campaigns = () => {
           <div style={{padding: '1rem'}}>
               <Toolbar />
               <Box m={1} />
-              <div style={{ height: 300}}>
+              <div style={{ height: 300, overflow: 'hidden', }}>
                   <CampaignBarChart data={generateData()} />
               </div>
               <Box m={1} />
           </div>
       </div>
-      <div style={{padding: '0 1rem 0 1rem'}}>
+      <div style={{padding: '0 1rem 0 1rem', backgroundColor: '#fff',}}>
           <ToolbarWithChildren />
       </div>
       {/*<Box m={1} />*/}
-      <TableComponent
-          columns={COLUMNS_CAMPAIGNS}
-          loading={loading}
-          pageCount={pageCount}
-          fetchData={fetchData}
-          data={data}
-      />
-
+        <div style={{backgroundColor: '#fff'}}>
+          <TableComponent
+              columns={COLUMNS_CAMPAIGNS}
+              loading={loading}
+              pageCount={pageCount}
+              fetchData={fetchData}
+              data={data}
+          />
+        </div>
 
     </LayoutComponent>
   );

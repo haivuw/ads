@@ -23,8 +23,11 @@ const AccountButton = withStyles({
         color: '#fff',
         textTransform: 'none',
         borderRadius: 0,
-        marginLeft: 18
-    }
+        marginLeft: 18,
+        '&:hover': {
+            fontWeight: '700',
+        },
+    },
 })(Button);
 
 export default function SelectMenuComponent({ buttonText, options, endIcon , ...prop}) {
