@@ -12,7 +12,6 @@ import {
 import PaginationComponent from '../Atoms/Pagination';
 import LoadingComponent from '../Atoms/Loading';
 import Tooltip from '@material-ui/core/Tooltip';
-import Typography from '@material-ui/core/Typography';
 import { withStyles, Theme, makeStyles } from '@material-ui/core/styles';
 
 const HtmlTooltip = withStyles((theme: Theme) => ({

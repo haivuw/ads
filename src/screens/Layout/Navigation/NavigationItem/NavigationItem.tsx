@@ -10,7 +10,7 @@ export default function NavigationItem({ icon, textButton }) {
     <List>
       <ListItem button>
         <ListItemIcon>
-            {icon}
+          {icon}
         </ListItemIcon>
         <ListItemText primary={textButton} />
       </ListItem>

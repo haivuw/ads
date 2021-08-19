@@ -1,6 +1,5 @@
 import React from 'react';
 import NavigationComponent from '.';
-import { HEADER_TYPE } from "../../../config/contanst";
 
 export default {
   title: 'Layouts/Navigation',
