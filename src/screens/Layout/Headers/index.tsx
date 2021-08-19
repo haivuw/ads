@@ -10,7 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import { HEADER_TYPE } from '../../../config/contanst';
+import { HEADER_TYPE } from '../../../common/contanst';
 import Button from '@material-ui/core/Button';
 import clsx from 'clsx';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';

@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderComponent from '.';
-import { HEADER_TYPE } from '../../../config/contanst';
+import { HEADER_TYPE } from '../../../common/contanst';
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 export default {

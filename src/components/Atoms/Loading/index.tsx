@@ -23,11 +23,10 @@ const DarkBackground = styled.div`
     `}
 `;
 
-export default function LoadingComponent({ loading, children }) {
+export default function LoadingComponent() {
   return (
-    <DarkBackground disappear={loading}>
-      <LoadingOverlay spinner={<BounceLoader />} active={loading}>
-        {children}
+    <DarkBackground disappear={true}>
+      <LoadingOverlay spinner={<BounceLoader />} active={true}>
       </LoadingOverlay>
     </DarkBackground>
   );
