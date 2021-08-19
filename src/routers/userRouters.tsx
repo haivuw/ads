@@ -2,10 +2,10 @@ import React from 'react';
 //-------------------------------------
 
 const CampaignsList = React.lazy(() =>
-    import('../screens/Campaigns/Lists'),
+    import('../pages/Campaigns/Lists'),
 );
 const NotFound = React.lazy(() =>
-    import('../screens/NotFound'),
+    import('../pages/NotFound'),
 );
 
 

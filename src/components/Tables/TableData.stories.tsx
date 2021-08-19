@@ -1,7 +1,7 @@
 import React from 'react';
 import TableComponent from '.';
 import makeData from './MakeData';
-import { COLUMNS_CAMPAIGNS } from "../../common/contanst";
+import { COLUMNS_CAMPAIGNS } from "../../utils/contansts";
 
 export default {
   title: 'Components/Table',

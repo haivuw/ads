@@ -2,7 +2,7 @@ import React from 'react';
 import { createStyles, makeStyles, useTheme, Theme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import HeaderComponent from './Headers';
-import { HEADER_TYPE } from '../../common/contanst';
+import { HEADER_TYPE } from '../../utils/contansts';
 import Navigation from './Navigation';
 
 const useStyles = makeStyles((theme: Theme) =>

@@ -1,11 +1,11 @@
 import React, { Suspense, useContext } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Layout from '../screens/Layout';
+import Layout from '../pages/Layout';
 import LoadingComponent from 'components/Atoms/Loading';
 import { userRoutes } from './userRouters';
 
-const Index = React.lazy(() => import('../screens/Campaigns/Lists'));
-const NotFound = React.lazy(() => import('../screens/NotFound'));
+const Index = React.lazy(() => import('../pages/Campaigns/Lists'));
+const NotFound = React.lazy(() => import('../pages/NotFound'));
 
 function MainRouter() {
     return (
