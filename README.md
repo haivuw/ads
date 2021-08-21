@@ -1,10 +1,11 @@
 
 #Directory Structure
+
 The top level directory structure will be as follows:
 * **assets** - Global static assets such as images, fonts, logo, etc.
 * **api** - Global request to server, etc.
 * **components** - Global shared/reusable components, such as layout (wrappers, navigation), form components, buttons
-* **store** - Global Redux store
+* **stores** - Global Redux store
 * **routers** - Global routing
 * **utils** - Utilities, helpers, constants, and the like
 * **pages** - The majority of the app would be contained here
@@ -27,6 +28,7 @@ The top level directory structure will be as follows:
 I like keeping familiar conventions wherever possible, so src contains everything, `index.tsx` is the entry point, and `App.tsx` sets up the theme, store
 
 ##Api
+
  `api` consist of file containing the api endpoints. This folder doesn't have any logic. This helps having a single place for all api url end points and not to be scattered around in components, mostly inside useEffects.
  
 ```bash
@@ -39,7 +41,8 @@ I like keeping familiar conventions wherever possible, so src contains everythin
 
 ```
 `request.js` file can specify config defaults that will be applied to every request(`baseURL`, `headers`, etc)
-##components
+##Components
+
 Within the `components` folder, I would group by type - `forms`, `tables`, `buttons`, `layout`, etc. The specifics will vary by your specific app.
 You'd create a folder for each component (`TextField`, `Select`, `Radio`, `Dropdown`, etc.), and inside would be a file for the component itself, the styles, the tests, and the Storybook if it's being used.
 * **Component.js** - The actual React component
@@ -55,12 +58,10 @@ You'd create a folder for each component (`TextField`, `Select`, `Radio`, `Dropd
         │   ├── /TextField
         │   │   ├── TextField.tsx
         │   │   ├── TextField.styles.tsx
-        │   │   ├── TextField.test.tsx
         │   │   └── TextField.stories.tsx
         │   ├── /Select
         │   │   ├── Select.tsx
         │   │   ├── Select.styles.tsx
-        │   │   ├── Select.test.tsx
         │   │   └── Select.stories.tsx
         │   └── index.js
         └── /layout
@@ -68,13 +69,13 @@ You'd create a folder for each component (`TextField`, `Select`, `Radio`, `Dropd
                 └── /NavBar
                     ├── NavBar.tsx
                     ├── NavBar.styles.tsx
-                    ├── NavBar.test.tsx
                     └── NavBar.stories.tsx
 
 ```
 
-##Store
-The global data store will be contained in the `store` directory - in this case, Redux. Each feature will have a folder, which will contain the Redux slice, as well as actions and tests.
+##Stores
+
+The global data store will be contained in the `stores` directory - in this case, Redux. Each feature will have a folder, which will contain the Redux slice, as well as actions and tests.
 ```bash
 .
 └── /src
@@ -93,7 +94,7 @@ The global data store will be contained in the `store` directory - in this case,
 └── src
     └── /utils
         ├── /constants
-        │   └── countries.constants.js
+        │   └── campaigns.constants.js
         └── /helpers
             ├── validation.helpers.js
             ├── currency.helpers.js
@@ -102,22 +103,24 @@ The global data store will be contained in the `store` directory - in this case,
 ```
 
 ##Pages
+
 ```bash
 .
 └── /src
     └── /pages
         ├── /Camapaigns
         │   ├── /List
-        │   │   ├── CampaignsPage.js
+        │   │   ├── CampaignsPage.tsx
         │   │   ├── CampaignsPage.stories.tsx
         │   │   └── CampaignsPage.styles.tsx
         │   └── /Detail
         └── /Login
             └── LoginPage
-               ├── LoginPage.styles.js
-               ├── LoginPage.js
-               └── LoginPage.stories.js
+               ├── LoginPage.styles.tsx
+               ├── LoginPage.tsx
+               └── LoginPage.stories.tsx
 
 ```
 ##Routes
+
 A folder to contains all root level routes.
