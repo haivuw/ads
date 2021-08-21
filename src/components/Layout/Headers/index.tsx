@@ -14,7 +14,7 @@ import { HEADER_TYPE } from '../../../utils/contansts';
 import Button from '@material-ui/core/Button';
 import clsx from 'clsx';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import SelectMenuComponent from "../../../components/Atoms/SelectMenu";
+import SelectMenuComponent from "../../Atoms/SelectMenu";
 import InputSearch from 'components/Atoms/InputSearch';
 
 const drawerWidth = 240;

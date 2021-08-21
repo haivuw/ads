@@ -1,5 +1,5 @@
 import React from 'react';
-import NavigationComponent from '.';
+import NavigationComponent from './index';
 
 export default {
   title: 'Layouts/Navigation',

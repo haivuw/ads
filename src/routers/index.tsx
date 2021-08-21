@@ -1,6 +1,6 @@
 import React, { Suspense, useContext } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Layout from '../pages/Layout';
+import Layout from '../components/Layout';
 import LoadingComponent from 'components/Atoms/Loading';
 import { userRoutes } from './userRouters';
 

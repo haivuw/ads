@@ -1,53 +1,15 @@
 import React from 'react';
-import clsx from 'clsx';
-import { createStyles, makeStyles, useTheme, Theme, withStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import InputBase from '@material-ui/core/InputBase';
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    pagination: {
-      display: 'flex',
-    },
-      container:{
-        width: '100%',
-        textAlign: 'center'
-      }
-  })
-);
+import {BootstrapInput, useStylesPagination} from "./Pagination.style";
+
 
 export default function PaginationComponent({ count, onChange, pageSize, setPageSize }) {
-  const classes = useStyles();
+  const classes = useStylesPagination();
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     setPageSize(Number(event.target.value));
   };
-
-  const BootstrapInput = withStyles((theme: Theme) =>
-    createStyles({
-      root: {
-        'label + &': {
-          marginTop: theme.spacing(3)
-        }
-      },
-      input: {
-        borderRadius: 4,
-        position: 'relative',
-        backgroundColor: theme.palette.background.paper,
-        border: '1px solid #ced4da',
-        fontSize: 16,
-        fontWeight: 'bold',
-        padding: '5px 26px 5px 12px',
-        marginLeft: 20,
-        transition: theme.transitions.create(['border-color', 'box-shadow']),
-        '&:focus': {
-          borderRadius: 4,
-          borderColor: '#80bdff',
-          boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)'
-        }
-      }
-    })
-  )(InputBase);
 
   const onChange1 = (event, value) => {
     // console.log(111111, value);

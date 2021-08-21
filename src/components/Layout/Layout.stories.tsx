@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import LayoutComponent from '.';
+import LayoutComponent from './index';
 
 export default {
   title: 'Layouts/Layout',

@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderComponent from '.';
+import HeaderComponent from './index';
 import { HEADER_TYPE } from '../../../utils/contansts';
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 

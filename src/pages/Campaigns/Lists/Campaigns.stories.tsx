@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { Box } from '@material-ui/core';
 import React, { useState, useEffect } from 'react';
-import LayoutComponent from '../../Layout/index';
+import LayoutComponent from '../../../components/Layout';
 import '../../../App.css';
 import TitleComponent from 'components/Atoms/TitlePage';
 import makeData from "components/Tables/MakeData";

@@ -17,8 +17,8 @@ The top level directory structure will be as follows:
     ├───/api
     ├───/components
     ├───/pages
-    ├───/stores
     ├───/routers
+    ├───/stores
     ├───/utils
     ├───index.tsx
     └───App.tsx
@@ -45,29 +45,28 @@ I like keeping familiar conventions wherever possible, so src contains everythin
 
 Within the `components` folder, I would group by type - `forms`, `tables`, `buttons`, `layout`, etc. The specifics will vary by your specific app.
 You'd create a folder for each component (`TextField`, `Select`, `Radio`, `Dropdown`, etc.), and inside would be a file for the component itself, the styles, the tests, and the Storybook if it's being used.
-* **Component.js** - The actual React component
-* **Component.styles.js** - The Styled Components file for the component
-* **Component.test.js** - The tests
-* **Component.stories.js** - The Storybook file
+* **Component.tsx** - The actual React component or file name is index.tsx
+* **Component.styles.tsx** - The Styled Components file for the component
+* **Component.stories.tsx** - The Storybook file
 
 ```bash
 .
 └── /src
     └── /components
-        ├── /forms
+        ├── /Forms
         │   ├── /TextField
-        │   │   ├── TextField.tsx
+        │   │   ├── TextField.tsx(index.tsx)
         │   │   ├── TextField.styles.tsx
         │   │   └── TextField.stories.tsx
         │   ├── /Select
-        │   │   ├── Select.tsx
+        │   │   ├── Select.tsx(index.tsx)
         │   │   ├── Select.styles.tsx
         │   │   └── Select.stories.tsx
         │   └── index.js
-        └── /layout
-            └── /navigation
+        └── /Layout
+            └── /Navigation
                 └── /NavBar
-                    ├── NavBar.tsx
+                    ├── NavBar.tsx(index.tsx)
                     ├── NavBar.styles.tsx
                     └── NavBar.stories.tsx
 
@@ -89,6 +88,7 @@ The global data store will be contained in the `stores` directory - in this case
 ```
 ## Utils
 
+the `utils` folder are usually some global utility functions, like validation and conversion, that could easily be used across multiple sections of the app
 ```bash
 .
 └── src
@@ -104,6 +104,7 @@ The global data store will be contained in the `stores` directory - in this case
 
 ## Pages
 
+Here's where the main part of your app will live: in the `pages` directory.
 ```bash
 .
 └── /src
@@ -124,3 +125,15 @@ The global data store will be contained in the `stores` directory - in this case
 ##Routes
 
 A folder to contains all root level routes.
+
+```bash
+.
+└── /src
+    └── /routers
+        ├── index.tsx
+        ├── /Users
+        │   └── index.tsx
+        └── /Admin
+            └── index.tsx
+
+```
