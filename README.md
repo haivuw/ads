@@ -1,5 +1,5 @@
 
-# Directory Structure
+# 1. Directory Structure
 
 The top level directory structure will be as follows:
 * **assets** - Global static assets such as images, fonts, logo, etc.
@@ -136,4 +136,25 @@ A folder to contains all root level routes.
         └── /Admin
             └── index.tsx
 
+```
+
+# 2. Storybook
+**Run storybook to develop** (use sudo if needed)
+```angular2html
+npm run storybook
+```
+**Build storybook** (use sudo if needed)
+```angular2html
+npm run build-storybook
+```
+
+# 3. React App
+
+**Run to develop**(use sudo if needed)
+```angular2html
+npm start
+```
+**Build storybook** (use sudo if needed)
+```angular2html
+npm run build
 ```
