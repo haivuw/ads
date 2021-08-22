@@ -53,7 +53,7 @@ You'd create a folder for each component (`TextField`, `Select`, `Radio`, `Dropd
 .
 └── /src
     └── /components
-        ├── /Forms
+        ├── /Atoms
         │   ├── /TextField
         │   │   ├── TextField.tsx(index.tsx)
         │   │   ├── TextField.styles.tsx
@@ -64,6 +64,7 @@ You'd create a folder for each component (`TextField`, `Select`, `Radio`, `Dropd
         │   │   └── Select.stories.tsx
         │   └── index.js
         └── /Layout
+            ├── /Heasders
             └── /Navigation
                 └── /NavBar
                     ├── NavBar.tsx(index.tsx)
@@ -122,7 +123,7 @@ Here's where the main part of your app will live: in the `pages` directory.
                └── LoginPage.stories.tsx
 
 ```
-##Routes
+## Routes
 
 A folder to contains all root level routes.
 
@@ -139,22 +140,53 @@ A folder to contains all root level routes.
 ```
 
 # 2. Storybook
-**Run storybook to develop** (use sudo if needed)
+
+### Development (use sudo if needed)
+Changed made to code will automatically be reflected in the app.
+
 ```angular2html
 npm run storybook
 ```
-**Build storybook** (use sudo if needed)
+or
 ```angular2html
-npm run build-storybook
+yarn run storybook
 ```
+### Deployment (use sudo if needed)
+You can also create a static build and deployment
 
+```angular2html
+npm run build-storybook 
+```
+or
+```angular2html
+yarn run build-storybook
+```
+Go to folder storyboard-static and open index.html in browser.
 # 3. React App
 
-**Run to develop**(use sudo if needed)
+### Development(use sudo if needed)
+Runs the app in development mode.
+Open `http://localhost:3000` to view it in the browser.
 ```angular2html
 npm start
 ```
-**Build storybook** (use sudo if needed)
+or
+```angular2html
+yarn start
+```
+### Deployment (use sudo if needed)
+
+Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.
+
+Your app is ready to be deployed.
 ```angular2html
 npm run build
 ```
+or
+ ```angular2html
+yarn build
+```
+

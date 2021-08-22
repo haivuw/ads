@@ -5,7 +5,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
 
-export default function NavigationItem({ icon, textButton }) {
+export default function NavBarItem({ icon, textButton }) {
   return (
     <List>
       <ListItem button>

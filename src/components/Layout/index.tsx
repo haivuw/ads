@@ -3,7 +3,7 @@ import { createStyles, makeStyles, useTheme, Theme } from '@material-ui/core/sty
 import CssBaseline from '@material-ui/core/CssBaseline';
 import HeaderComponent from './Headers';
 import { HEADER_TYPE } from '../../utils/contansts';
-import Navigation from './Navigation';
+import Navigation from './Navigation/NavBar';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

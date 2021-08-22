@@ -1,11 +1,11 @@
 
 import React from 'react';
-import NavigationItem from './NavigationItem';
+import NavBarItem from './NavBarItem';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 
 export default {
   title: 'Layouts/Navigation/Item',
-  component: NavigationItem,
+  component: NavBarItem,
   argTypes: {
     icon: {
     },
@@ -15,7 +15,7 @@ export default {
   }
 };
 
-const Template = args => <NavigationItem {...args} />;
+const Template = args => <NavBarItem {...args} />;
 export const Item = Template.bind({});
 Item.args = {
   icon: <DashboardIcon />,

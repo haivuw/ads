@@ -2,7 +2,7 @@ import React, { Suspense, useContext } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Layout from '../components/Layout';
 import LoadingComponent from 'components/Atoms/Loading';
-import { userRoutes } from './userRouters';
+import { userRoutes } from './Users/userRouters';
 
 const Index = React.lazy(() => import('../pages/Campaigns/Lists'));
 const NotFound = React.lazy(() => import('../pages/NotFound'));
